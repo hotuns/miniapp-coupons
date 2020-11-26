@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "先领个券",
+    "navigationBarBackgroundColor": "#0bb9b6",
+    "backgroundColor": "#FFFFFF",
+    "titleView": false
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

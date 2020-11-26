@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mp-tabs": "../../components/tabs/index"
+  }
+}

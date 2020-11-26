@@ -1,0 +1,55 @@
+<!-- <view class="container"> -->
+<view>
+
+<mp-tabs 
+  tabs="{{tabs}}" 
+  tab-class="{{tab-title}}"
+  activeTab="{{activeTab}}" 
+  swiperClass="weui-tabs-swiper"
+  bindtabclick="onTabCLick"
+  bindchange="onChange"
+  activeClass="tab-bar-title__selected"
+>
+  <block wx:for="{{tabs}}" wx:key="title">
+    <view class="container tab-content" slot="tab-content-{{index}}" > 
+    <view
+			class="coupon"
+		>
+			<view
+				class="item"
+        wx:for="{{item.coupon}}" wx:for-index="i" wx:for-item="v"
+			>
+				<view class="top">
+					<view class="left">
+						<view class="content">
+							<image
+								src="{{v.icon}}"
+								class="icon"
+								mode="widthFix"
+							/>
+							<view class="name">{{ v.name }}</view>
+						</view>
+						<view
+							class="text"
+							wx:if="{{v.type == 1}}"
+						>天天可领</view>
+						<view
+							class="text"
+							wx:elif="{{v.type == 2}}"
+						>限时秒杀</view>
+					</view>
+					<view class="right" data-index="{{i}}" bindtap="toCoupon">免费领取</view>
+				</view>
+				<view class="bottom">
+					<image
+						src="{{v.bannerPic}}"
+						mode="widthFix"
+					/>
+				</view>
+			</view>
+		</view>
+    </view>
+  </block>
+</mp-tabs>
+
+</view>
