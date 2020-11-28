@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/index/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",

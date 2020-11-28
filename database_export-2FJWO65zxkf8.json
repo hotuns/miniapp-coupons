@@ -1,0 +1,28 @@
+{
+    "title": "打车",
+    "icon": "cloud://test-b602t.7465-test-b602t-1253275554/icon/ele.png",
+    "coupon": [
+        {
+            "name": "花小猪大额红包",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/huaxiaozhu.jpg",
+            "url": "",
+            "type": 1,
+            "minapp": {
+                "appid": "wxd98a20e429ce834b",
+                "path": "pages/index/index?scene=zxOgqk&f_dpsid=b8984b687b7e44549cb1bcb02049ae8d&entrance_channel=&g_channel=8b658d6ecaa5b8285c9b36f27dc81af1&channel_id=2001001001&share_code=bv0pki3no25cksn458l0&longitude=117.69752502441406&latitude=38.921287536621094&city_id=7"
+            }
+        },
+        {
+            "name": "滴滴打车出行券",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/didibanner.jpg",
+            "url": "",
+            "type": 1,
+            "minapp": {
+                "appid": "wxaf35009675aa0b2a",
+                "path": "passenger-recommend/views/coupon/index?sharecode=bv0pktcl5g1r04efs3gg&template=1&channel_id=1100000090&scene=14&root_dchn=gq2mZb"
+            }
+        }
+    ]
+}

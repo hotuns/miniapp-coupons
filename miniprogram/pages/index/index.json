@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-tab": "../../components/dist/tab/index",
+        "van-tabs": "../../components/dist/tabs/index",
+        "van-notice-bar": "../../components/dist/notice-bar/index",
+        "van-loading": "../../components/dist/loading/index"
+    }
+}
