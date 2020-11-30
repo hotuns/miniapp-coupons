@@ -1,0 +1,32 @@
+<!-- miniprogram/pages/goods/index.wxml -->
+<van-notice-bar scrollable="{{ false }}" text="不定时更新,让你最低的价格买到最想要的东西" color="#fff" background="#0bb9b6"></van-notice-bar>
+<van-notice-bar left-icon="volume-o" text="{{notice}}" />
+<view wx:if="{{tabs.length >0}}">
+    <van-tabs bind:change="onChange" active="{{ activeTab }}" swipeable>
+        <van-tab wx:for="{{tabs}}" title="{{item.title}}">
+            <view class="container">
+                <view class="coupon">
+                    <view class="item" wx:for="{{item.goods}}" wx:for-index="i" wx:for-item="v">
+                        <view class="top">
+                            <view class="left">
+                                <view class="content">
+                                    <image src="{{v.icon}}" class="icon" mode="widthFix" />
+                                    <view class="name">{{ v.name }}</view>
+                                </view>
+                                <view class="text" wx:if="{{v.type == 1}}">天天可领</view>
+                                <view class="text" wx:elif="{{v.type == 2}}">限时秒杀</view>
+                            </view>
+                            <view class="right" data-index="{{i}}" bindtap="toCoupon">免费领取</view>
+                        </view>
+                        <view class="bottom">
+                            <image src="{{v.bannerPic}}" mode="widthFix" data-index="{{i}}" bindtap="toCoupon" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </van-tab>
+    </van-tabs>
+</view>
+<view wx:else class="loading">
+    <van-loading size="30px">加载最好的优惠券...</van-loading>
+</view>

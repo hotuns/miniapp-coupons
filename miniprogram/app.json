@@ -1,14 +1,33 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "先领个券",
-    "navigationBarBackgroundColor": "#0bb9b6",
-    "backgroundColor": "#FFFFFF",
-    "titleView": false
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "pages": [
+        "pages/goods/index",
+        "pages/index/index"
+    ],
+    "tabBar": {
+        "selectedColor": "#0bb9b6",
+        "color":"#c3c3c3",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "领红包",
+                "iconPath": "images/tabbar/coupons.png",
+                "selectedIconPath": "images/tabbar/coupons-s.png"
+            },
+            {
+                "pagePath": "pages/goods/index",
+                "text": "捡便宜",
+                "iconPath": "images/tabbar/add-cart.png",
+                "selectedIconPath": "images/tabbar/add-cart-s.png"
+            }
+        ]
+    },
+    "window": {
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "先领个券",
+        "navigationBarBackgroundColor": "#0bb9b6",
+        "backgroundColor": "#FFFFFF",
+        "titleView": false
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
 }

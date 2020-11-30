@@ -1,6 +1,4 @@
-// miniprogram/pages/index/index.js
-const db = wx.cloud.database()
-
+// miniprogram/pages/goods/index.js
 Page({
 
     /**
@@ -18,6 +16,16 @@ Page({
      */
     onLoad: function (options) {
         this.loadData()
+        let tabs = [
+            {
+                title: '拼多多',
+                goods: [
+                    {
+
+                    }
+                ]
+            }
+        ]
     },
 
     loadData() {
@@ -59,31 +67,6 @@ Page({
             console.log('顶部轮播信息', this.data.notice)
         })
     },
-
-    onChange(e) {
-        console.log(e)
-        console.log(this.data.activeTab)
-        const index = e.detail.index
-        this.setData({ activeTab: parseInt(index) })
-    },
-
-    toCoupon(e) {
-        const couponIdx = e.currentTarget.dataset.index
-        const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
-
-
-        console.log('miniinfo', wxappinfo)
-
-        wx.navigateToMiniProgram({
-            appId: wxappinfo.appid,
-            path: wxappinfo.path,
-            success(res) {
-                // 打开成功
-                console.log('打开成功', res)
-            }
-        })
-    },
-
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -129,15 +112,7 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function (res) {
-        if (res.from === 'button') {
-            // 来自页面内转发按钮
-            console.log(res.target)
-        }
-        return {
-            title: this.data.msg.title,
-            path: this.data.msg.path,
-            imageUrl: this.data.msg.imageUrl,
-        }
+    onShareAppMessage: function () {
+
     }
 })
