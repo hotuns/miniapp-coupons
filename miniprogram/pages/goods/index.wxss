@@ -1,1 +1,81 @@
 /* miniprogram/pages/goods/index.wxss */
+page{
+    height: 100%;
+}
+
+.loading {
+    margin-top: 20rpx;
+    width:100%;
+    text-align: center;
+}
+
+.container {
+
+}
+
+.container .goods {
+
+}
+
+.container .goods .item{
+    width: 100%;
+    overflow: hidden;
+}
+
+.container .goods .item .link-cell {
+    display: flex;
+    align-items: center;
+
+}
+.container .goods .item .link-cell text{
+    font-size: 24rpm;
+    color: crimson;
+    font-weight: bolder;
+    margin-left: 20rpx;
+    width: 100%;
+    text-align: center;
+}
+
+
+.container .goods .item {
+    font-weight: normal;
+    color: rgb(143, 143, 143);
+
+}
+.container .goods .item .title {
+    width: 100%;
+    color: rgb(53, 53, 53);
+}
+
+.price {
+    width: 50%;
+    text-align: left;
+}
+.price>text {
+    color: rgb(255, 255, 255);
+    background-color: crimson;
+    padding: 0 4rpx;
+}
+.sales {
+    width: 50%;
+    text-align: right;
+}
+.sales>text {
+        color: rgb(53, 53, 53);
+}
+.coupon {
+
+}
+.coupon>text {
+    color: rgb(255, 255, 255);
+    background-color: rgb(220, 140, 20);
+    padding: 0 4rpx;
+}
+.coupon-quantity {
+
+}
+.coupon-quantity>text {
+    color: rgb(255, 255, 255);
+    background-color: rgb(220, 140, 20);
+    padding: 0 4rpx;
+}

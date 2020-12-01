@@ -2,11 +2,13 @@
 /* 样式 */
 page {
   background-color: #f8f8f8;
+  height: 100%;
 }
 
 .container {
   font-size: 14px;
   line-height: 24px;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -102,4 +104,6 @@ page {
 
 .loading {
     text-align: center;
+    margin-top: 20rpx;
+    width: 100%;
 }
