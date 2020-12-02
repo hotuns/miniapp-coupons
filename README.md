@@ -104,8 +104,8 @@ https://github.com/hedongshu/miniapp-coupons​github.com
 
 ## 效果展示
 
-![二维码](https://tva1.sinaimg.cn/large/0081Kckwly1gl99ekk8j0j30by0byta0.jpg)
-![展示](https://tva1.sinaimg.cn/large/0081Kckwly1gl99e5xjjhj30n01ds7wi.jpg)
+![二维码](https://github.com/hedongshu/miniapp-coupons/blob/main/IMG_7327.JPG)
+![展示](https://github.com/hedongshu/miniapp-coupons/blob/main/IMG_7326.PNG)
 
 
 
