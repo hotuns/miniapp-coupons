@@ -1,6 +1,11 @@
 <!-- miniprogram/pages/goods/index.wxml -->
-<van-notice-bar scrollable="{{ false }}" text="每天更新,让你最低的价格买到最想要的东西" color="#fff" background="#0bb9b6"></van-notice-bar>
+<wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
+<van-notice-bar scrollable="{{ false }}" text="每天更新,寻找全网最低价" color="#fff" background="#0bb9b6"></van-notice-bar>
 <!-- <van-notice-bar left-icon="volume-o" text="{{notice}}" /> -->
+<view bind:tap="toSearch">
+<van-search disabled value="{{searceValue}}" placeholder="请输入搜索关键词"  />
+</view>
+
 <view wx:if='{{initDone}}'>
     <van-tabs bind:change="onChange" active="{{ activeTab }}" swipeable>
         <van-tab wx:for="{{tabs}}" title="{{item.title}}">
@@ -22,25 +27,23 @@
                                 <view class="item">
                                     <image style="width: 100%; height: 300rpx" src="{{v.goods_thumbnail_url}}" mode="widthFix"></image>
                                     <view class="title  van-ellipsis">{{v.we_app_info.title}}</view>
-                                    <view style="display: flex">
-                                        <view class="price  van-ellipsis">
-                                            ￥
-                                            <text>{{v.min_group_price * 0.01}}</text>
+                                    <view class="sales  van-ellipsis">
+                                        <text>销量 {{v.sales_tip}}</text>
+                                    </view>
+                                    <view class="coupon  van-ellipsis">
+                                        <view class="coupon-size">
+                                            {{v.coupon_discount * 0.01}}
+                                            <text>元券</text>
                                         </view>
-                                        <view class="sales">
-                                            销量
-                                            <text>{{v.sales_tip}}</text>
+                                        <view class="coupon-nums">
+                                            还有{{filters.fnBitNum(v.coupon_remain_quantity)}}张
                                         </view>
                                     </view>
-                                    <view class="coupon">
-                                        领券立减:
-                                        <text>{{v.coupon_discount * 0.01}}</text>
-                                    </view>
-                                    <view class="coupon-quantity">
-                                        剩余优惠券
-                                        <text>
-                                            {{v.coupon_remain_quantity}} / {{v.coupon_total_quantity}}
-                                        </text>
+                                    <view class="price ">
+                                        <view>券后￥</view>
+                                        <view class="light">
+                                            {{filters.fnCalculate(v.min_group_price * 0.01,  v.coupon_discount * 0.01)}}
+                                        </view>
                                     </view>
                                 </view>
                             </van-grid-item>
@@ -52,5 +55,5 @@
     </van-tabs>
 </view>
 <view wx:if="{{loading}}" class="loading">
-    <van-loading size="30px" vertical>加载最实惠的商品...</van-loading>
+    <van-loading size="30px" vertical>正在为你找到最优惠的商品...</van-loading>
 </view>

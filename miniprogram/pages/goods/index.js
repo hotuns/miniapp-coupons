@@ -9,11 +9,14 @@ Page({
     data: {
         tabs: [],
         msg: {
-            title:'不用找人拼，直接拿到全网最低价，不再浪费一分钱'
+            title: '不用找人拼，直接拿到全网最低价，不再浪费一分钱'
         },
+        searceValue: '',
         activeTab: 0,
         pageNum: 0, //翻页,从0 开始
+        pageSize: 10,
         loading: true,
+        onReachBottomLock: true, //触底加载  锁
         initDone: false,
         notice: '领完券记得要收藏哦, 以便下次再领',
         resourceUrlList: [],// 平台大促活动链接
@@ -43,11 +46,15 @@ Page({
      */
     getPddGoods() {
         return new Promise((resolve, reject) => {
+            let data = {
+                pageNum: this.data.pageNum,
+                pageSize: this.data.pageSize
+            }
+            if (this.data.list_id) data['list_id'] = this.data.list_id
+
             wx.cloud.callFunction({
                 name: 'get-pdd-goods',
-                data: {
-                    pageNum: this.data.pageNum
-                },
+                data: data,
                 complete: res => {
                     resolve(res.result)
                 },
@@ -58,11 +65,48 @@ Page({
         })
     },
 
+    /**跳转到搜索页 */
+    toSearch() {
+        console.log('toSearch')
+        wx.navigateTo({
+            url: '/pages/goods/search/search',
+            // events: {
+            //     // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+            //     acceptDataFromOpenedPage: function (data) {
+            //         console.log(data)
+            //     },
+            //     someEvent: function (data) {
+            //         console.log(data)
+            //     }
+            // },
+            success: function (res) {
+                // 通过eventChannel向被打开页面传送数据
+                // res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+            }
+        })
+
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.loadData()
+        const _this = this
+
+        wx.getStorage({
+            key: 'config',
+            success(res) {
+                let config = res.data
+                _this.data.pageSize = config['goods-page-size']
+                _this.loadData()
+            },
+            fail() {
+                _this.data.pageSize = 10
+                _this.loadData()
+            }
+        })
+
+
     },
 
 
@@ -88,8 +132,9 @@ Page({
             let goodsList = {
                 title: '拼多多爆款',
                 type: 'goods',
-                items: goodslistres
+                items: goodslistres.goods_list
             }
+            this.data.list_id = goodslistres.list_id
             // 更新数据
             this.data.tabs.push(goodsList)
 
@@ -109,6 +154,7 @@ Page({
                 tabs: this.data.tabs,
                 initDone: true,
                 loading: false,
+                onReachBottomLock: false
             })
 
             console.log(this.data.tabs)
@@ -175,26 +221,34 @@ Page({
     onReachBottom: function () {
         console.log('触底')
 
-        this.setData({
-            loading: true
-        })
-
-        this.data.pageNum += 1
-
-        this.getPddGoods().then(res => {
-            // 更新数据
-            let items = this.data.tabs[0].items.concat(res)
-            this.data.tabs[0].items = items
-
-            console.log(this.data.tabs[0].items)
-
+        if (!this.data.onReachBottomLock) {
             this.setData({
-                loading: false,
-                tabs: this.data.tabs
+                loading: true,
+                onReachBottomLock: true
             })
-        }).catch(err => {
-            console.log(err)
-        })
+
+            this.data.pageNum += 1
+
+            this.getPddGoods().then(res => {
+                // 更新数据
+                this.data.list_id = res.list_id
+
+                let items = this.data.tabs[0].items.concat(res.goods_list)
+                this.data.tabs[0].items = items
+
+                console.log(this.data.tabs[0].items)
+
+                this.setData({
+                    loading: false,
+                    onReachBottomLock: false,
+                    tabs: this.data.tabs,
+                })
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+
+
     },
 
     /**

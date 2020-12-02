@@ -6,6 +6,7 @@
         "van-loading": "../../components/dist/loading/index",
         "van-cell": "../../components/dist/cell/index",
         "van-grid": "../../components/dist/grid/index",
-        "van-grid-item": "../../components/dist/grid-item/index"
+        "van-grid-item": "../../components/dist/grid-item/index",
+        "van-search": "../../components/dist/search/index"
     }
 }

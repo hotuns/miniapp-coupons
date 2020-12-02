@@ -1,0 +1,38 @@
+<!-- miniprogram/pages/goods/search/search.wxml -->
+<wxs src="../../../filters/numFormat.wxs" module="filters"></wxs>
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:search="onSearch" bind:cancel="onCancel" />
+<view wx:if='{{initDone}}' class="container">
+    <van-grid gutter="{{ 10 }}" column-num='{{2}}' center='{{true}}' clickable='{{true}}'>
+        <van-grid-item use-slot wx:for="{{goodsList}}" wx:for-index="i" wx:for-item="v" data-appinfo='{{v.we_app_info}}' bind:click='toMiniProgram'>
+            <view class="item">
+                <image style="width: 100%; height: 300rpx" src="{{v.goods_thumbnail_url}}" mode="widthFix"></image>
+                <view class="title  van-ellipsis">{{v.we_app_info.title}}</view>
+                <view class="sales  van-ellipsis">
+                    <text>销量 {{v.sales_tip}}</text>
+                </view>
+                <view class="coupon  van-ellipsis">
+                    <view class="coupon-size">
+                        {{v.coupon_discount * 0.01}}
+                        <text>元券</text>
+                    </view>
+                    <view class="coupon-nums">
+                        还有{{filters.fnBitNum(v.coupon_remain_quantity)}}张
+                    </view>
+                </view>
+                <view class="price ">
+                    <view>券后￥</view>
+                    <view class="light">
+                        {{filters.fnCalculate(v.min_group_price * 0.01,  v.coupon_discount * 0.01)}}
+                    </view>
+                </view>
+            </view>
+        </van-grid-item>
+    </van-grid>
+</view>
+<view wx:if="{{loading}}" class="loading">
+    <van-loading size="30px" vertical>正在找出最优惠的价格</van-loading>
+</view>
+<view class="tips" wx:if="{{(!initDone) &&  (!loading)}}">
+    <text>在上面搜索你想要的东西</text>
+    <text>我会为你找到最优惠的价格</text>
+</view>

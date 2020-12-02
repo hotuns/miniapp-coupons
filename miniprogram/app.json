@@ -1,7 +1,8 @@
 {
     "pages": [
+        "pages/index/index",
         "pages/goods/index",
-        "pages/index/index"
+        "pages/goods/search/search"
     ],
     "tabBar": {
         "selectedColor": "#0bb9b6",

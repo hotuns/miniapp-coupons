@@ -2,6 +2,7 @@
 const cloud = require("wx-server-sdk");
 const axios = require("axios");
 var crypto = require("crypto");
+const { debug } = require("console");
 
 
 cloud.init({
@@ -52,8 +53,18 @@ exports.main = async (event, context) => {
         pddConfig = pddConfig.data[0]
         console.log(pddConfig)
 
-        // 本接口用于通过pid和自定义参数来查询是否已经绑定备案
-        // let authorityquery = {
+
+
+
+
+
+
+        let { client_id, client_secret, p_id, bined_uid } = pddConfig
+
+
+
+        //   // 本接口用于通过pid和自定义参数来查询是否已经绑定备案
+        //   let authorityquery = {
         //     client_id,
         //     client_secret,
         //     type: 'pdd.ddk.member.authority.query',
@@ -66,8 +77,7 @@ exports.main = async (event, context) => {
         // let author = await axios.post('https://gw-api.pinduoduo.com/api/router', Object.assign({}, authorityquery, { sign: getSign(authorityquery,client_secret) }))
         // console.log('是否授权', author)
 
-
-        // 获取授权链接
+        //获取授权链接
         // let bindautoquery = {
         //     client_id,
         //     client_secret,
@@ -77,30 +87,37 @@ exports.main = async (event, context) => {
         //     p_id_list: JSON.stringify([p_id]),
         //     timestamp: new Date().getTime(),
         //     custom_parameters: JSON.stringify({
-        //         uid: 1
+        //         uid: 1,
         //     })
         // }
-        // let bindautorul = await axios.post('https://gw-api.pinduoduo.com/api/router', Object.assign({}, bindautoquery, { sign: getSign(bindautoquery,client_secret) }))
+        // let bindautorul = await axios.post('https://gw-api.pinduoduo.com/api/router', Object.assign({}, bindautoquery, { sign: getSign(bindautoquery, client_secret) }))
         // console.log('授权链接', bindautorul)
 
 
-        let { client_id, client_secret, p_id, bined_uid, get_pdd_goods_sort_type } = pddConfig
 
-        let pageNum = event.pageNum || 0
+
+        // 搜索
+        let page = event.page || 1
+        let page_size = event.page_size || 10
+        let keyword = event.keyword || '手机'
         let list_id = event.list_id
-        let limit = event.pageSize || 10
-        let offset = pageNum * limit
 
         let query = {
             client_id,
             client_secret,
-            p_id,
-            limit, //请求数量；默认值 ： 400
-            offset, // 从多少位置开始请求；默认值 ： 0，offset需是limit的整数倍，仅支持整页翻页
-            sort_type: get_pdd_goods_sort_type, // 1-实时热销榜；2-实时收益榜
-            type: "pdd.ddk.top.goods.list.query",
+            page,
+            page_size,
+            keyword, //搜索关键词
+            pid: p_id,
+            type: 'pdd.ddk.goods.search',
             timestamp: new Date().getTime(),
-            data_type: 'JSON'
+            data_type: 'JSON',
+            sort_type: 2, //排序方式:0-综合排序;2-按佣金比例降序;3-按价格升序;4-按价格降序;6-按销量降序;9-券后价升序排序;10-券后价降序排序;16-店铺描述评分降序
+            with_coupon: true,//是否只返回优惠券的商品，false返回所有商品，true只返回有优惠券的商品
+            block_cat_packages: JSON.stringify([1]),//屏蔽商品类目包：1-拼多多小程序屏蔽类目;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
+            custom_parameters: JSON.stringify({
+                uid: 1,
+            })
         };
 
         // 如果翻页会用到
@@ -114,8 +131,8 @@ exports.main = async (event, context) => {
             Object.assign(query, { sign })
         );
 
-        let list = res.data.top_goods_list_get_response.list;
-        list_id = res.data.top_goods_list_get_response.list_id
+        let list = res.data.goods_search_response.goods_list;
+        list_id = res.data.goods_search_response.list_id
 
         let goods_list = []
         for (const item of list) {

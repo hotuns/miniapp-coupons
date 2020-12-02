@@ -1,0 +1,36 @@
+//保留1位小数
+var fnPrice = function (num) {
+    num = num.toFixed(1);
+    return num;
+};
+
+var fnEmpty = function (num) {
+    if (num == 0) {
+        return '暂无'
+    } else {
+        return num
+    }
+};
+
+//传入金额换算成单位万元
+var fnBitNum = function (num) {
+    var result = parseFloat(num) / 10000;
+    if (result > 1) {
+        result = result % 1 == 0 ? result : (result.toFixed(2) + '万');
+    } else {
+        result = num
+    }
+    return result;
+};
+
+var fnCalculate = function (price, coup) {
+    var result = price - coup
+    return fnPrice(result)
+}
+
+module.exports = {
+    fnPrice: fnPrice,
+    fnEmpty: fnEmpty,
+    fnBitNum: fnBitNum,
+    fnCalculate: fnCalculate
+}
