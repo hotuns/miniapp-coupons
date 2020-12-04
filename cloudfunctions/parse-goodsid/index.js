@@ -80,71 +80,61 @@ exports.main = async (event, context) => {
       bined_uid,
       get_pdd_goods_sort_type,
     } = pddConfig;
+    let goods_id = [event.id];
 
-    let pageNum = event.pageNum || 0;
-    let list_id = event.list_id;
-    let limit = event.pageSize || 10;
-    let offset = pageNum * limit;
-
-    let query = {
+    // 获取详情
+    let detailQuery = {
+      type: "pdd.ddk.goods.detail",
       client_id,
       client_secret,
       p_id,
-      limit, //请求数量；默认值 ： 400
-      offset, // 从多少位置开始请求；默认值 ： 0，offset需是limit的整数倍，仅支持整页翻页
-      sort_type: get_pdd_goods_sort_type, // 1-实时热销榜；2-实时收益榜
-      type: "pdd.ddk.top.goods.list.query",
+      pid: p_id,
+      search_id: "49f75d573541c4630a2c29b1b5a39f3b065",
       timestamp: new Date().getTime(),
-      data_type: "JSON",
+      goods_id_list: JSON.stringify(goods_id),
+      custom_parameters: JSON.stringify({
+        pid: p_id,
+        uid: bined_uid,
+      }),
+    };
+    detailQuery["sign"] = getSign(detailQuery, client_secret);
+    let detailRes = await axios.post(
+      "https://gw-api.pinduoduo.com/api/router",
+      detailQuery
+    );
+    detailRes = detailRes.data.goods_detail_response.goods_details[0];
+
+    // 商品id
+
+    let generateQuery = {
+      type: "pdd.ddk.goods.promotion.url.generate",
+      client_id,
+      client_secret,
+      p_id,
+      pid: p_id,
+      generate_we_app: true,
+      timestamp: new Date().getTime(),
+      goods_id_list: JSON.stringify(goods_id),
+      search_id: "49f75d573541c4630a2c29b1b5a39f3b065",
+      custom_parameters: JSON.stringify({
+        pid: p_id,
+        uid: bined_uid,
+      }),
     };
 
-    // 如果翻页会用到
-    if (list_id) query["list_id"] = list_id;
+    // debugger;
+    generateQuery["sign"] = getSign(generateQuery, client_secret);
 
-    let sign = getSign(query, client_secret);
-
-    let res = await axios.post(
+    let goodsRes = await axios.post(
       "https://gw-api.pinduoduo.com/api/router",
-      Object.assign(query, { sign })
+      generateQuery
     );
 
-    let list = res.data.top_goods_list_get_response.list;
-    list_id = res.data.top_goods_list_get_response.list_id;
-    let search_id = res.data.top_goods_list_get_response.search_id;
+    let goodsInfo =
+      goodsRes.data.goods_promotion_url_generate_response
+        .goods_promotion_url_list[0];
 
-    let goods_list = [];
-    for (const item of list) {
-      let generateQuery = {
-        type: "pdd.ddk.goods.promotion.url.generate",
-        client_id,
-        client_secret,
-        p_id,
-        pid: p_id,
-        search_id,
-        generate_we_app: true,
-        timestamp: new Date().getTime(),
-        goods_sign: item.goods_sign,
-        goods_id_list: JSON.stringify([item.goods_id]),
-        custom_parameters: JSON.stringify({
-          pid: p_id,
-          uid: bined_uid,
-        }),
-      };
-      // debugger;
-      generateQuery["sign"] = getSign(generateQuery, client_secret);
-
-      let detail = await axios.post(
-        "https://gw-api.pinduoduo.com/api/router",
-        generateQuery
-      );
-
-      let goodsInfo =
-        detail.data.goods_promotion_url_generate_response
-          .goods_promotion_url_list[0];
-      goods_list.push(Object.assign({}, goodsInfo, item));
-    }
-
-    return { goods_list, list_id };
+    return Object.assign(detailRes, goodsInfo);
   } catch (error) {
     return { error };
   }

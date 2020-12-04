@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-field": "../../components/dist/field/index"
+  }
+}

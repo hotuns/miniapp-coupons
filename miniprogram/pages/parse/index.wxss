@@ -1,0 +1,19 @@
+/* miniprogram/pages/parse/index.wxss */
+
+.parse {
+  padding: 10rpx;
+}
+
+.url-textarea {
+  box-sizing: border-box;
+  border: 1px solid;
+  border: 1px solid;
+  margin: 20rpx auto;
+  padding: 10rpx;
+  height: 200rpx;
+}
+
+.goods {
+  display: grid;
+  grid-template-rows: 25%  auto;
+}

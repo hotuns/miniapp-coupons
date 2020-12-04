@@ -1,0 +1,43 @@
+<wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
+<view class='parse'>
+
+	<view class="section">
+		<form bindsubmit="bindFormSubmit">
+			<textarea
+			 class='url-textarea'
+			 placeholder="在这里粘贴你的拼多多链接，马上为你找到对应的优惠信息"
+			 name="textarea"
+			/>
+			<button form-type="submit" type='primary'> 寻找优惠券 </button>
+  </form>
+</view>
+
+<view class="goods">
+  <view class="goods-image">
+        <image style="width: 100%; height: 300rpx" src="{{goodsInfo.goods_thumbnail_url}}" mode="widthFix"></image>
+    </view>
+
+    <view class="goods-info">
+    <view class="title  van-ellipsis">{{goodsInfo.we_app_info.title}}</view>
+        <view class="sales  van-ellipsis">
+            <text>销量 {{goodsInfo.sales_tip}}</text>
+        </view>
+        <view class="coupon  van-ellipsis">
+            <view class="coupon-size">
+                {{goodsInfo.coupon_discount * 0.01}}
+                <text>元券</text>
+            </view>
+            <view class="coupon-nums">
+                还有{{filters.fnBitNum(goodsInfo.coupon_remain_quantity)}}张
+            </view>
+        </view>
+        <view class="price ">
+            <view>券后￥</view>
+            <view class="light">
+                {{filters.fnCalculate(goodsInfo.min_group_price * 0.01,  goodsInfo.coupon_discount * 0.01)}}
+            </view>
+        </view>
+        </view>
+</view>
+</view>
+
