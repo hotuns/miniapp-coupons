@@ -88,7 +88,7 @@ Page({
      * 订阅消息
      */
     subscribeMessage() {
-        let tmplId = this.data.tmplIds
+        let tmplId = env.tmplIds
         wx.requestSubscribeMessage({
             tmplIds: [tmplId],
             success(res) {

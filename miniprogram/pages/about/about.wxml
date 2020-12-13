@@ -10,6 +10,16 @@
   </view>
 
   <view class="section">
+    <van-cell title="领券提醒" icon="location-o" is-link bindtap="subscribeMessage"/>
+
+
     <!-- <i class="iconfont icon-dollar" ></i> -->
+    <!-- <van-cell title="联系客服" icon="chat-o">
+      <view slot="right-icon">
+        <van-button class="contack-button" icon="arrow" type="default" open-type='contact' style="height: 30px"/>
+      </view>
+    </van-cell> -->
+
+
   </view>
 </view>

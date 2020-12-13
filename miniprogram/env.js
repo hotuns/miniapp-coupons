@@ -1,6 +1,8 @@
 export default {
     // 微信云函数配置
     wxCloudEnv: "test-b602t",
+    // 订阅消息模板id
+    tmplIds: 'OrFGUmg9vWaGoxBCU_2wnCUePX-AFGkwMg9LPUeWzUE',
     // 拼多多appid
     pddAppId: "wx32540bd863b27570",
     // 首页子分类进去的详情页顶部banner图片地址

@@ -1,5 +1,8 @@
 {
   "usingComponents": {
+    "van-cell": "../../components/dist/cell/index",
+    "van-cell-group": "../../components/dist/cell-group/index",
+    "van-button": "../../components/dist/button/index"
   },
   "navigationBarTitleText": "我的"
 }
