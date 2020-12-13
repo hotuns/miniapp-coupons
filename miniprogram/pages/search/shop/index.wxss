@@ -1,0 +1,145 @@
+/* pages/search/search.wxss */
+.search-tool {
+  width: calc(100vw - 40rpx);
+  padding: 20rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 54rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.search-tool input {
+  background-color: #f0f0f0;
+  flex-grow: 1;
+  padding: 6rpx 14rpx;
+  font-size: 24rpx;
+  border-radius: 27rpx;
+  height: 54rpx;
+}
+.search-button {
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  width: 100rpx;
+  background-color: #ec6933; 
+  /* // rgb(0, 155, 216); */
+  text-align: center;
+  color: white;
+  height: 54rpx;
+  font-size: 26rpx;
+  line-height: 54rpx;
+  border-radius: 27rpx;
+}
+.empty-view {
+  min-height: 400rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  flex-grow: 1;
+  width: 100vw;
+}
+.empty {
+  width: 200rpx;
+  height: 200rpx;
+}
+.history-search-top {
+  display: flex;
+  width: calc(100vw - 40rpx);
+  align-items: center;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+.history-search-top text {
+  color: gray;
+  font-size: 30rpx;
+}
+.history-search-top image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.history-search {
+  padding: 20rpx;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100vw - 40rpx);
+}
+.history-search text {
+  height: 44rpx;
+  padding: 0 20rpx;
+  border-radius: 22rpx;
+  background-color: #f0f0f0;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  color: gray;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+
+
+
+
+
+.search-tool {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.production-tools {
+  background-color: white;
+  width: 100vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 94rpx;
+  z-index: 1;
+}
+.category {
+  z-index: 10;
+  width: 100vw;
+  height: 80rpx;
+  white-space: nowrap;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.tools {
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+}
+.tools view {
+  width: 25%;
+  font-size: 24rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+.tools view image {
+  width: 25rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+.tool-s {
+  color: #ec6933 !important;
+}
+
+.tool-filter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+.only-yh {
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: grey;
+}
+.tool-filter switch {
+  height: 44rpx;
+  margin-right: 20rpx;
+  transform: scale(.6)
+}

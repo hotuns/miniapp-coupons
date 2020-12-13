@@ -162,8 +162,17 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        const opt = wx.getLaunchOptionsSync()
+        const options = wx.getLaunchOptionsSync()
+        console.log('show',options)
+        if(options.scene == 1038 || options.scene == 1001) {
 
+            
+
+            if(options.referrerInfo && options.referrerInfo.appId) {
+
+            }
+        }
+        
     },
 
     /**

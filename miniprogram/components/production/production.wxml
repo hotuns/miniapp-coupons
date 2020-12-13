@@ -1,46 +1,56 @@
 <!-- components/production.wxml -->
 <wxs module="m1">
-  var numberToFix= function (value) {
-    return value.toFixed(2)
-  }
- module.exports.numberToFix=numberToFix;
+	var numberToFix= function (value) {
+	return value.toFixed(2)
+	}
+	module.exports.numberToFix=numberToFix;
 </wxs>
 <wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
 <view style="display: flex; flex-direction: column;">
-    <!-- 商品 -->
-    <block  wx:for="{{productions}}" wx:for-index="i">
-        <view class="production" bindtap="clickOnProduction" data-gid="{{item.goods_id}}" data-searchid="{{item.search_id}}">
-            <image class="p-left-cover" src="{{item.goods_thumbnail_url}}" mode="aspectFill" />
-            <view class="p-right-view">
-                <view class="p-name">{{item.goods_name}}</view>
-                <view class="p-info">
-                    <view class="p-info-sale">{{item.sales_tip}}人已买</view>
-                    <view class="p-info-coupon" wx:if="{{item.coupon_discount > 0}}">
-                        <text class="p-info-discount">{{item.coupon_discount / 100}}元优惠券</text>
-                        <text>剩余 {{filters.fnBitNum(item.coupon_remain_quantity)}}张</text>
-                    </view>
-                    <view class="p-info-coupon" wx:if="{{item.mall_coupon_remain_quantity > 0}}">
-                        <text class="p-info-discount">{{item.mall_coupon_discount_pct / 100}}元店铺券</text>
-                        <text>剩余 {{filters.fnBitNum(item.mall_coupon_remain_quantity)}}张</text>
-                    </view>
-                    <view class="p-info-coupon" wx:if="{{item.clt_cpn_remain_quantity > 0}}">
-                        <text class="p-info-discount">{{item.clt_cpn_discount / 100}}元收藏券</text>
-                        <text>剩余 {{filters.fnBitNum(item.clt_cpn_remain_quantity)}}张</text>
-                    </view>
-                </view>
-                <view class="p-price">
-                    <text class="p-price1">券后</text>
-                    <text class="ppre">￥</text>
-                    <text class="p-price2">
+	<!-- 商品 -->
+	<block wx:for="{{productions}}" wx:for-index="i">
+		<view
+		 class="production"
+		 bindtap="clickOnProduction"
+		 data-gid="{{item.goods_id}}"
+		 data-searchid="{{item.search_id}}"
+		>
+			<image
+			 class="p-left-cover"
+			 src="{{item.goods_thumbnail_url}}"
+			 mode="aspectFill"
+			/>
+			<view class="p-right-view">
+				<view class="p-name van-multi-ellipsis--l2">{{item.goods_name}}</view>
+				<view class="p-info">
+					<view class="p-info-sale">{{item.sales_tip}}人已买</view>
+					<view class="p-info-coupon" wx:if="{{item.coupon_discount > 0}}">
+						<text class="p-info-discount">{{item.coupon_discount / 100}}元优惠券</text>
+						<text>剩余 {{filters.fnBitNum(item.coupon_remain_quantity)}}张</text>
+					</view>
+					<view class="p-info-coupon" wx:if="{{item.mall_coupon_remain_quantity > 0}}">
+						<text class="p-info-discount">{{item.mall_coupon_discount_pct / 100}}元店铺券</text>
+						<text>剩余 {{filters.fnBitNum(item.mall_coupon_remain_quantity)}}张</text>
+					</view>
+					<view class="p-info-coupon" wx:if="{{item.clt_cpn_remain_quantity > 0}}">
+						<text class="p-info-discount">{{item.clt_cpn_discount / 100}}元收藏券</text>
+						<text>剩余 {{filters.fnBitNum(item.clt_cpn_remain_quantity)}}张</text>
+					</view>
+				</view>
+				<view class="p-price">
+					<text class="p-price1">券后</text>
+					<text class="ppre">￥</text>
+					<text class="p-price2">
                         {{m1.numberToFix((item.min_group_price - item.coupon_discount) / 100)}}
                     </text>
-                    <text class="p-price3">￥{{m1.numberToFix(item.min_group_price / 100)}}</text>
-                </view>
-            </view>
-        </view>
+					<text class="p-price3">￥{{m1.numberToFix(item.min_group_price / 100)}}</text>
+				</view>
+			</view>
+		</view>
 
-        <view wx:if="{{(i+1)%8 == 0}}" class="item">
-           <ad unit-id="adunit-842150a511cffd15" ad-intervals="30"></ad>
-        </view>
-    </block>
+		<view wx:if="{{(i+1)%8 == 0}}" class="item">
+			<ad unit-id="adunit-842150a511cffd15" ad-intervals="30"></ad>
+		</view>
+	</block>
 </view>
+
