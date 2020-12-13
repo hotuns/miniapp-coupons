@@ -13,7 +13,8 @@ Page({
         activeTab: 0,
         notice: '领完券记得要收藏哦, 以便下次再领',
         tmplIds: 'OrFGUmg9vWaGoxBCU_2wnCUePX-AFGkwMg9LPUeWzUE',
-        subscribeShow: false
+        subscribeShow: false,
+        audit: false
     },
 
     /**
@@ -55,9 +56,12 @@ Page({
 
             getAppConfig().then(confit=>{
                 console.log(confit)
+                this.setData({
+                    audit: confit.audit
+                })
                 if(!confit.audit) {
                     this.setData({
-                        subscribeShow: true
+                        subscribeShow: true,
                     })
                 }
             })

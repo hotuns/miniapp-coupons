@@ -1,11 +1,13 @@
 // miniprogram/pages/parse/index.js
-const db = wx.cloud.database();
+import {getAppConfig} from '../../util/util'
+
 
 Page({
     /**
      * 页面的初始数据
      */
     data: {
+        audit:false,
         originUrl: "",
         parsedUrl: "",
         goodsInfo: undefined,
@@ -126,7 +128,13 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) { },
+    onLoad: function (options) { 
+        getAppConfig().then(config=>{
+            this.setData({
+                audit: config.audit
+            })
+        })
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

@@ -1,5 +1,12 @@
 <wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
 <view class='parse'>
+
+    
+
+<view style="margin: 20px">
+     <ad unit-id="adunit-842150a511cffd15"></ad>
+    </view>
+
     <form bindsubmit="bindFormSubmit" bindreset='bindFormReset'>
         <view class="section">
             <view>
@@ -12,6 +19,15 @@
             寻找优惠券
         </button>
     </form>
+
+    <view style="margin: 20px" wx:if="{{!audit}}">
+     <ad unit-id="adunit-abbef0f8558e28b2" ad-type="video" ad-theme="white"></ad>
+    </view>
+
+    
+    
+
+
     <van-dialog use-slot confirm-button-text='立即购买' cancel-button-text='复制优惠链接' show="{{  dialogShow }}" closeOnClickOverlay="{{true}}" show-cancel-button bind:close="dialogClose" bind:confirm="dialogConfirm">
         <view class="goods">
             <view class="goods-image">

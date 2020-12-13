@@ -8,7 +8,9 @@
         <van-tab wx:for="{{tabs}}" title="{{item.title}}">
             <view class="container">
                 <view class="coupon">
-                    <view class="item" wx:for="{{item.coupon}}" wx:for-index="i" wx:for-item="v">
+                    <block wx:for="{{item.coupon}}" wx:for-index="i" wx:for-item="v">
+                        <view class="item">
+
                         <view class="top">
                             <view class="left">
                                 <view class="content">
@@ -16,14 +18,26 @@
                                     <view class="name">{{ v.name }}</view>
                                 </view>
                                 <view class="text" wx:if="{{v.type == 1}}">天天可领</view>
-                                <view class="text" wx:elif="{{v.type == 2}}">限时秒杀</view>
+                                <view class="text" wx:elif="{{v.type == 2}}">可叠加</view>
+                                <view class="text" wx:elif="{{v.type == 3}}">限时秒杀</view>
                             </view>
                             <view class="right" data-index="{{i}}" bindtap="toCoupon">免费领取</view>
                         </view>
                         <view class="bottom">
                             <image src="{{v.bannerPic}}" mode="widthFix" data-index="{{i}}" bindtap="toCoupon" />
                         </view>
+
+                       
                     </view>
+                    <view wx:if="{{(i+1)%5 == 0}}" class="item">
+                         <ad unit-id="adunit-abbef0f8558e28b2" ad-type="video" ad-theme="white"></ad>
+                    </view>
+                
+                    <!-- <view wx:if="{{!audit && i>3 && i%5 == 0}} " class="item">
+                        <ad unit-id="adunit-842150a511cffd15"></ad>
+                    </view> -->
+                    </block>
+                    
                 </view>
             </view>
         </van-tab>
