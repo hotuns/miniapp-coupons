@@ -1,43 +1,61 @@
 <wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
 <view class='parse'>
-
-	<view class="section">
-		<form bindsubmit="bindFormSubmit">
-			<textarea
-			 class='url-textarea'
-			 placeholder="在这里粘贴你的拼多多链接，马上为你找到对应的优惠信息"
-			 name="textarea"
-			/>
-			<button form-type="submit" type='primary'> 寻找优惠券 </button>
-  </form>
-</view>
-
-<view class="goods">
-  <view class="goods-image">
-        <image style="width: 100%; height: 300rpx" src="{{goodsInfo.goods_thumbnail_url}}" mode="widthFix"></image>
-    </view>
-
-    <view class="goods-info">
-    <view class="title  van-ellipsis">{{goodsInfo.we_app_info.title}}</view>
-        <view class="sales  van-ellipsis">
-            <text>销量 {{goodsInfo.sales_tip}}</text>
-        </view>
-        <view class="coupon  van-ellipsis">
-            <view class="coupon-size">
-                {{goodsInfo.coupon_discount * 0.01}}
-                <text>元券</text>
+    <form bindsubmit="bindFormSubmit" bindreset='bindFormReset'>
+        <view class="section">
+            <view>
+                <text class="title">待解析的链接</text>
+                <button wx:if="{{showClear}}" class='clear' form-type="reset">清空内容</button>
             </view>
-            <view class="coupon-nums">
-                还有{{filters.fnBitNum(goodsInfo.coupon_remain_quantity)}}张
+            <textarea class='url-textarea' placeholder="在这里粘贴你的拼多多链接，马上为你找到对应的优惠信息" name="textarea" focus="{{true}}" maxlength="{{-1}}" auto-height="{{true}}" bindinput='onTextareaInput' />
+        </view>
+        <button class="subBut" disabled="{{!showClear}}" form-type="submit" type='primary'>
+            寻找优惠券
+        </button>
+    </form>
+    <van-dialog use-slot confirm-button-text='立即购买' cancel-button-text='复制优惠链接' show="{{  dialogShow }}" closeOnClickOverlay="{{true}}" show-cancel-button bind:close="dialogClose" bind:confirm="dialogConfirm">
+        <view class="goods">
+            <view class="goods-image">
+                <image style="width: 100%; height: auto" src="{{goodsInfo.goods_thumbnail_url}}" mode="widthFix"></image>
+            </view>
+            <view class="goods-info">
+                <view class="title  van-ellipsis">{{goodsInfo.we_app_info.title}}</view>
+                <!-- <view class="sales  van-ellipsis">
+                    <text>销量 {{goodsInfo.sales_tip}}</text>
+                </view> -->
+                <view class="coupon  van-ellipsis">
+                    <view class="coupon-size">
+                        {{goodsInfo.coupon_discount * 0.01}}
+                        <text>元优惠券</text>
+                    </view>
+                    <view class="coupon-nums">
+                        还有{{filters.fnBitNum(goodsInfo.coupon_remain_quantity)}}张
+                    </view>
+                </view>
+                <view class="coupon  van-ellipsis">
+                    <view class="coupon-size">
+                        {{goodsInfo.mall_coupon_discount_pct * 0.01}}
+                        <text>元店铺券</text>
+                    </view>
+                    <view class="coupon-nums">
+                        还有{{filters.fnBitNum(goodsInfo.mall_coupon_remain_quantity)}}张
+                    </view>
+                </view>
+                <view class="coupon  van-ellipsis">
+                    <view class="coupon-size">
+                        {{(goodsInfo.clt_cpn_discount || 0) * 0.01 }}
+                        <text>元收藏券</text>
+                    </view>
+                    <view class="coupon-nums">
+                        还有{{filters.fnBitNum(goodsInfo.clt_cpn_remain_quantity)}}张
+                    </view>
+                </view>
+                <view class="price ">
+                    <view>券后￥</view>
+                    <view class="light">
+                        {{filters.fnCalculate(goodsInfo.min_group_price * 0.01,  goodsInfo.coupon_discount * 0.01,  goodsInfo.clt_cpn_discount * 0.01,  goodsInfo.mall_coupon_discount_pct * 0.01)}}
+                    </view>
+                </view>
             </view>
         </view>
-        <view class="price ">
-            <view>券后￥</view>
-            <view class="light">
-                {{filters.fnCalculate(goodsInfo.min_group_price * 0.01,  goodsInfo.coupon_discount * 0.01)}}
-            </view>
-        </view>
-        </view>
+    </van-dialog>
 </view>
-</view>
-

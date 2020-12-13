@@ -1,5 +1,4 @@
 // miniprogram/pages/goods/index.js
-const db = wx.cloud.database()
 
 Page({
 
@@ -115,18 +114,6 @@ Page({
      */
     async loadData() {
         try {
-            // let sharemessageres = await db.collection('share-message').get()
-            // let messages = sharemessageres.data
-            // let idx = Math.floor(Math.random() * messages.length)
-            // this.data.msg = messages[idx]
-            // console.log('分享信息', this.data.msg)
-
-
-            let notice = await db.collection('notice').get()
-            if (notice[0]) this.setData({ notice: notice[0].notice })
-            console.log('顶部轮播信息', this.data.notice)
-
-
             // 加载商品列表
             let goodslistres = await this.getPddGoods()
             let goodsList = {
@@ -161,9 +148,6 @@ Page({
         } catch (error) {
             console.log('loadData错误:', error)
         }
-
-
-
 
     },
 

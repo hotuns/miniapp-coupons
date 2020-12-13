@@ -1,38 +1,52 @@
 {
-  "pages": [
-    "pages/parse/index",
-    "pages/index/index",
-    "pages/goods/index",
-    "pages/goods/search/search"
-  ],
-  "tabBar": {
-    "selectedColor": "#0bb9b6",
-    "color": "#c3c3c3",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "领红包",
-        "iconPath": "images/tabbar/coupons.png",
-        "selectedIconPath": "images/tabbar/coupons-s.png"
-      },
-      {
-        "pagePath": "pages/goods/index",
-        "text": "捡便宜",
-        "iconPath": "images/tabbar/add-cart.png",
-        "selectedIconPath": "images/tabbar/add-cart-s.png"
-      },
-      {
-        "pagePath": "pages/parse/index",
-        "text": "解析链接"
-      }
-    ]
-  },
-  "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "先领个券",
-    "navigationBarBackgroundColor": "#0bb9b6",
-    "backgroundColor": "#FFFFFF"
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "pages": [
+        "pages/index/index",
+        "pages/admin/index",
+        "pages/parse/index",
+        "pages/goods/index",
+        "pages/goods/search/search",
+        "pages/admin/coupons/index",
+        "pages/pddindex/index",
+        "pages/detail/detail",
+        "pages/about/about",
+        "pages/search/search",
+        "pages/stype/stype"
+    ],
+    "tabBar": {
+        "selectedColor": "#0bb9b6",
+        "color": "#c3c3c3",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "领好券",
+                "iconPath": "images/tabbar/coupons.png",
+                "selectedIconPath": "images/tabbar/coupons-s.png"
+            },
+            {
+                "pagePath": "pages/pddindex/index",
+                "text": "买东西",
+                "iconPath": "images/tabbar/add-cart.png",
+                "selectedIconPath": "images/tabbar/add-cart-s.png"
+            },
+            {
+                "pagePath": "pages/parse/index",
+                "text": "解析链接",
+                "iconPath": "images/tabbar/gift.png",
+                "selectedIconPath": "images/tabbar/gift-s.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "我",
+                "iconPath": "images/tabbar/gift.png",
+                "selectedIconPath": "images/tabbar/gift-s.png"
+            }
+        ]
+    },
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "点外卖买东西先领券",
+        "navigationBarBackgroundColor": "#fff",
+        "backgroundColor": "#FFFFFF"
+    },
+    "sitemapLocation": "sitemap.json"
 }

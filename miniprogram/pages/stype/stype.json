@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "production": "/components/production/production"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

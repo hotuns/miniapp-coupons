@@ -1,5 +1,6 @@
 // miniprogram/pages/index/index.js
-const db = wx.cloud.database()
+import { getCopons, getShareMessage, getNotice } from '../../api/coupons'
+import {getAppConfig} from '../../util/util'
 
 Page({
 
@@ -10,7 +11,9 @@ Page({
         tabs: [],
         msg: {},
         activeTab: 0,
-        notice: '领完券记得要收藏哦, 以便下次再领'
+        notice: '领完券记得要收藏哦, 以便下次再领',
+        tmplIds: 'OrFGUmg9vWaGoxBCU_2wnCUePX-AFGkwMg9LPUeWzUE',
+        subscribeShow: false
     },
 
     /**
@@ -18,12 +21,18 @@ Page({
      */
     onLoad: function (options) {
         this.loadData()
+
     },
 
+    /**
+     * 加载所需的数据
+     */
     loadData() {
-        db.collection('coupons').get().then(res => {
-            const tabs = res.data
-            console.log(tabs)
+
+        getCopons().then(res => {
+            console.log(res)
+            let tabs = res
+
 
             let all = {
                 title: '全部',
@@ -31,32 +40,80 @@ Page({
                 coupon: []
             }
 
-            tabs.forEach(item => {
+            res.forEach(item => {
                 let c = item.coupon
                 c.forEach(citem => {
                     all.coupon.push(citem)
                 })
             })
 
+
             tabs.unshift(all)
 
-            this.setData({ tabs })
+
+            this.setData({ tabs: tabs })
+
+            getAppConfig().then(confit=>{
+                console.log(confit)
+                if(!confit.audit) {
+                    this.setData({
+                        subscribeShow: true
+                    })
+                }
+            })
+
         })
 
-        db.collection('share-message').get().then(res => {
-            const messages = res.data
-
-            let idx = Math.floor(Math.random() * messages.length)
-
-            this.data.msg = messages[idx]
-            console.log('分享信息', this.data.msg)
+        getShareMessage().then(res => {
+            this.data.msg = res
         })
 
-        db.collection('notice').get().then(res => {
-            const notice = res.data
-            if (notice[0]) this.setData({ notice: notice[0].notice })
 
-            console.log('顶部轮播信息', this.data.notice)
+        getNotice().then(res => {
+            this.setData({ notice: res })
+        })
+    },
+
+
+    subscribeMessageConfirm() {
+        this.subscribeMessage()
+    },
+    subscribeMessageClose() { },
+
+    /**
+     * 订阅消息
+     */
+    subscribeMessage() {
+        let tmplId = this.data.tmplIds
+        wx.requestSubscribeMessage({
+            tmplIds: [tmplId],
+            success(res) {
+                // 申请订阅成功
+                if (res.errMsg === 'requestSubscribeMessage:ok') {
+                    // 这里将订阅的课程信息调用云函数存入云开发数据
+                    wx.cloud
+                        .callFunction({
+                            name: 'subscribe',
+                            data: {
+                                templateId: tmplId,
+                            },
+                        })
+                        .then(() => {
+                            wx.showToast({
+                                title: '订阅成功',
+                                icon: 'success',
+                                duration: 2000,
+                            });
+                        })
+                        .catch(() => {
+                            wx.showToast({
+                                title: '订阅失败',
+                                icon: 'success',
+                                duration: 2000,
+                            });
+                        });
+                }
+            },
         })
     },
 
@@ -67,12 +124,18 @@ Page({
         this.setData({ activeTab: parseInt(index) })
     },
 
+
+    /**
+     * 跳转到其他小程序
+     * @param {} e 
+     */
     toCoupon(e) {
         const couponIdx = e.currentTarget.dataset.index
         const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
 
 
         console.log('miniinfo', wxappinfo)
+
 
         wx.navigateToMiniProgram({
             appId: wxappinfo.appid,
@@ -95,6 +158,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        const opt = wx.getLaunchOptionsSync()
 
     },
 

@@ -2,7 +2,39 @@
 /* 样式 */
 page {
   background-color: #f8f8f8;
-  height: 100%;
+  width:100vw;
+  overflow-x: hidden;
+}
+
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+  0% {
+      transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+      transform: scale(1.1); /*放大1.1倍*/
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  75% {
+      transform: scale(1);
+  }
+}
+
+.top-notice {
+    background: #0d342f;
+    color: #fff;
+    padding: 20rpx;
+    -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+    -webkit-animation-duration: 1.5s; /*动画所花费的时间*/
+}
+.top-notice>text {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
 .container {
@@ -26,7 +58,7 @@ page {
 .container .coupon .item {
   background-color: #ffffff;
   margin: 30rpx;
-  border-radius: 10rpx;
+  border-radius: 30rpx;
   padding: 0 30rpx 30rpx 30rpx;
 }
 
@@ -98,6 +130,7 @@ page {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 30rpx;
 }
 
 
@@ -106,4 +139,14 @@ page {
     text-align: center;
     margin-top: 20rpx;
     width: 100%;
+}
+
+.subscribe {
+  padding: 4rpx;
+}
+.subscribe>image {
+  display: block;
+  width: 100%;
+  height: 30vh;
+  margin: 0 auto;
 }

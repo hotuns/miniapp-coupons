@@ -1,0 +1,34 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <view class="search-tool">
+    <input type="text" placeholder="请输入搜索关键字" bindinput="bindKeyInput" value="{{searchVal}}" confirm-type="search" bindconfirm="searchContent"/>
+    <view class="search-button" bindtap="searchContent">搜索</view>
+  </view>
+  <view class="history-search-top" wx:if="{{productions.length == 0}}">
+    <text>历史搜索</text>
+    <image bindtap="clearSearchContent" src="/images/remove.png" mode="aspectFill"/>
+  </view>
+  <view class="history-search" wx:if="{{productions.length == 0}}">
+    <text bindtap="onTapHistory" data-val="{{item}}" wx:for="{{historys}}">{{item}}</text>
+  </view>
+  <view class="empty-view"  wx:if="{{productions.length == 0}}">
+    <image class="empty" src="/images/empty.png" mode="aspectFill"/>
+  </view>
+  <view class="production-tools" wx:if="{{productions.length > 0}}">
+    <view class="tools">
+      <view class="{{sort_type === 0 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="zh">综合</view>
+      <view class="{{sort_type === 6 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="xl">销量</view>
+      <view class="{{sort_type === 8 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="yhq">优惠券</view>
+      <view class="{{sort_type === 3 || sort_type === 4 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="jg">价格
+        <image src="/images/px.png"  mode="aspectFit" wx:if="{{sort_type !== 3 && sort_type !== 4}}"/>
+        <image src="/images/sx.png"  mode="aspectFit" wx:if="{{sort_type === 3}}"/>
+        <image src="/images/jx.png"  mode="aspectFit" wx:if="{{sort_type === 4}}"/>
+      </view>
+    </view>
+    <view class="tool-filter">
+        <view class="only-yh">只显示有优惠券的商品</view>
+        <switch color="#ec6933" checked="{{filterYH}}" bindchange="onlyFilterChange"/>
+    </view>
+  </view>
+  <production  wx:if="{{productions.length > 0}}" productions="{{productions}}" />
+</view>

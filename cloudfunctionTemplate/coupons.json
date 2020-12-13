@@ -1,0 +1,11 @@
+[
+  {
+    "name": "updatenotice",
+    "value": {
+      "apitype": "updateNotice",
+      "data": {
+        "notice": "不止有外卖优惠券哦，多看看，有惊喜~111"
+      }
+    }
+  }
+]

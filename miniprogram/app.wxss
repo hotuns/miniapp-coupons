@@ -1,6 +1,8 @@
 
 @import './components/dist/common/index.wxss';
 
+@import "./style/iconfont.wxss";
+
 page {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
     Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',

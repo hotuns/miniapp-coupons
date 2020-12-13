@@ -1,0 +1,96 @@
+/* components/production.wxss */
+
+.production {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: white;
+  width: calc(100vw - 40rpx);
+}
+.p-left-cover {
+  width: 40vw;
+  height: 30vw;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+.p-right-view {
+  width: calc(100vw - 40rpx - 20rpx - 40vw);
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+}
+.p-name {
+  font-size: 30rpx;
+  word-break: break-all;
+  line-height: 30rpx;
+  display: block;
+  margin-bottom: 6rpx;
+  max-height: 60rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.p-info {
+  flex-grow: 1;
+  color: gray;
+  font-size: 22rpx;
+}
+.p-info-discount {
+  border: 2rpx solid #ec6933;
+  font-size: 22rpx;
+  padding: 2rpx 4rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  color: #ec6933;
+  margin-right: 10rpx;
+}
+.p-info-coupon:not(:last-child) {
+    margin-bottom: 16rpx;
+}
+.p-info-sale {
+  font-size: 22rpx;
+  height: 30rpx;
+  color: grey;
+}
+
+.p-price {
+  margin-bottom: 10rpx;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.p-price1 {
+  font-size: 24rpx;
+  margin-right: 8rpx;
+}
+.p-price2 {
+  font-size: 40rpx;
+  line-height: 0.7;
+  color: #ec6933;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+.p-price3 {
+  font-size: 22rpx;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.ppre {
+  color: #ec6933;
+  font-weight: bold;
+  font-size: 24rpx !important;
+}
+
+.p-share {
+  text-align: right;
+  font-size: 24rpx;
+  background-color: #ec6933;
+  color: white;
+  padding: 6rpx 10rpx;
+  height: 34rpx;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "production": "/components/production/production"
+  },
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

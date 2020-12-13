@@ -1,0 +1,39 @@
+/* miniprogram/pages/admin/coupons/index.wxss */
+
+.container {
+    margin: 10px;
+    border: 1px solid;
+}
+
+.coupons {
+    display: grid;
+    grid-template-columns: 30% auto;
+
+}
+
+.coupons-info {
+    margin-left: 10px;
+}
+
+.buts {
+    height: 100%;
+    text-align: center;
+    width: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+}
+.edit-but {
+    height: 100%;
+    line-height: 100%;
+    background: chocolate;
+    color: #fff;
+}
+.delete-but {
+    height: 100%;
+    line-height: 100%;
+
+    background: red;
+    color: #fff;
+}

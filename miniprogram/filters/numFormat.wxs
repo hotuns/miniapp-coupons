@@ -14,6 +14,11 @@ var fnEmpty = function (num) {
 
 //传入金额换算成单位万元
 var fnBitNum = function (num) {
+
+    if (isNaN(parseFloat(num))) {
+        return 0
+    }
+
     var result = parseFloat(num) / 10000;
     if (result > 1) {
         result = result % 1 == 0 ? result : (result.toFixed(2) + '万');
@@ -23,9 +28,15 @@ var fnBitNum = function (num) {
     return result;
 };
 
-var fnCalculate = function (price, coup) {
-    var result = price - coup
-    return fnPrice(result)
+var fnCalculate = function () {
+    var price = arguments[0]
+
+    for (var i = 1; i < arguments.length; i++) {
+        var coup = arguments[i] || 0
+        price = price - coup
+    }
+
+    return fnPrice(price)
 }
 
 module.exports = {

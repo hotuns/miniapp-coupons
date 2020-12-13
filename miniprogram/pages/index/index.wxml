@@ -1,5 +1,7 @@
 <!-- miniprogram/pages/index/index.wxml -->
-<van-notice-bar scrollable="{{ false }}" text="记得右上角添加收藏哟, 每天都能领券" color="#fff" background="#0bb9b6"></van-notice-bar>
+<!-- <view class="top-notice" bindtap='subscribeMessage'>
+    <text>【点我】提醒明天再来领更大的红包！【点我】</text>
+</view> -->
 <van-notice-bar left-icon="volume-o" text="{{notice}}" />
 <view wx:if="{{tabs.length >0}}">
     <van-tabs bind:change="onChange" active="{{ activeTab }}" swipeable>
@@ -30,3 +32,12 @@
 <view wx:else class="loading">
     <van-loading size="30px">加载最好的优惠券...</van-loading>
 </view>
+<!-- <van-dialog use-slot show="{{subscribeShow }}" show-cancel-button bind:close="subscribeMessageClose" bind:confirm="subscribeMessageConfirm">
+    <image src="https://img.yzcdn.cn/1.jpg" />
+</van-dialog> -->
+<van-dialog use-slot show="{{subscribeShow }}" show-cancel-button bind:close="subscribeMessageClose" bind:confirm="subscribeMessageConfirm" confirm-button-text='提醒我明天再来'>
+    <view class="subscribe">
+        <image src="cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/a89637f2c503ea874117429dc6768e4c.jpg"></image>
+        【总是保持以上选择】记得打钩哦~
+    </view>
+</van-dialog>

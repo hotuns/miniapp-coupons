@@ -1,0 +1,4 @@
+<!-- miniprogram/pages/admin/index.wxml -->
+<van-cell-group title="功能列表">
+    <van-cell wx:for="{{list}}" is-link title="{{item.title}}" link-type="navigateTo" url="{{item.url}}" />
+</van-cell-group>

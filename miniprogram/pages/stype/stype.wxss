@@ -1,0 +1,7 @@
+/* pages/stype/stype.wxss */
+
+
+.s-banner {
+  width: 100vw;
+  height: 250rpx;
+}

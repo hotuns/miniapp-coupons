@@ -1,0 +1,38 @@
+<!-- miniprogram/pages/admin/coupons/index.wxml -->
+<view class="coupons-list">
+    <view wx:for="{{couponsList}}" class="container">
+        <van-cell-group>
+            <van-field value="{{ item.name }}" label="分类名" type="textarea" placeholder="请输入分类名" border="{{ false }}" />
+            <van-field value="{{ item.index }}" label="排序" type="number" placeholder="请输入排序" border="{{ false }}" />
+        </van-cell-group>
+        <van-cell-group title='优惠券列表'>
+            <van-swipe-cell right-width="{{ 100 }}" wx:for="{{item.coupons}}" wx:for-item="coupon">
+                <view class="coupons">
+                    <view class="coupons-img">
+                        <image style="width:100%; height: auto" src="{{coupon.banner_img}}" mode="widthFix"></image>
+                    </view>
+                    <view class="coupons-info">
+                        <view>标题: {{coupon.title}}</view>
+                        <view>小程序地址: {{coupon.wx_path}}</view>
+                        <view>小程序id: {{coupon.wx_appid}}</view>
+                    </view>
+                </view>
+                <view slot="right" class="buts">
+                    <view class="edit-but">修改</view>
+                    <view class="delete-but">删除</view>
+                </view>
+            </van-swipe-cell>
+        </van-cell-group>
+        <van-swipe-cell right-width="{{ 100 }}">
+            <view slot='-'>
+                <view class="coupons-img">
+                    <image style="width: 80rpx; height: 80rpx" src="{{item.url}}" mode="widthFix"></image>
+                </view>
+            </view>
+            <view slot="right">
+                <text>修改</text>
+                <text>删除</text>
+            </view>
+        </van-swipe-cell>
+    </view>
+</view>

@@ -1,5 +1,5 @@
 {
-  "usingComponents": {
-    "van-field": "../../components/dist/field/index"
-  }
+    "usingComponents": {
+        "van-dialog": "../../components/dist/dialog/index"
+    }
 }

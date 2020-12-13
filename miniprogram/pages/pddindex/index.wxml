@@ -1,0 +1,50 @@
+<!-- index.wxml -->
+<view class="container">
+    <view class="search-tool">
+        <input type="text" placeholder="搜索你要的商品" bindfocus="gotoSearch" />
+    </view>
+    <view class="menu">
+        <!-- // 0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销,6-实时收益,7-今日畅销,8-高佣榜单，默认1 -->
+        <view class="menu-item" bindtap="gotoStype" data-type="{{5}}" data-title="爆款排行" data-banner="{{env.subTypeBannerImage.shot}}">
+            <image src="/images/hot.png" mode="aspectFit" />
+            <text>爆款排行</text>
+        </view>
+        <view class="menu-item" bindtap="gotoStype" data-type="{{0}}" data-title="1.9包邮" data-banner="{{env.subTypeBannerImage.s19}}">
+            <image src="/images/99.png" mode="aspectFit" />
+            <text>1.9包邮</text>
+        </view>
+        <view class="menu-item" bindtap="gotoStype" data-type="{{2}}" data-title="品牌好货" data-banner="{{env.subTypeBannerImage.spp}}">
+            <image src="/images/pp.png" mode="aspectFit" />
+            <text>品牌好货</text>
+        </view>
+        <view class="menu-item" bindtap="gotoStype" data-type="{{8}}" data-title="特别推荐" data-banner="{{env.subTypeBannerImage.shot}}">
+            <image src="/images/pp.png" mode="aspectFit" />
+            <text>特别推荐</text>
+        </view>
+    </view>
+    <view class="production-tools">
+        <scroll-view class="category" scroll-x="{{true}}" style="width:100%" scroll-y="{{false}}">
+            <view wx:for="{{categorys}}" class="category-item  {{s_category_oid === item.oid ? 'category-item-s' : ''}}" data-oid="{{item.oid}}" bindtap="changeCategoryId">
+                {{item.text}}
+            </view>
+        </scroll-view>
+        <view class="tools">
+            <view class="{{sort_type === 0 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="zh">
+                综合
+            </view>
+            <view class="{{sort_type === 6 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="xl">
+                销量
+            </view>
+            <view class="{{sort_type === 8 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="yhq">
+                优惠券
+            </view>
+            <view class="{{sort_type === 3 || sort_type === 4 ? 'tool-s' : ''}}" bindtap="changeSortType" data-type="jg">
+                价格
+                <image src="/images/px.png" mode="aspectFit" wx:if="{{sort_type !== 3 && sort_type !== 4}}" />
+                <image src="/images/sx.png" mode="aspectFit" wx:if="{{sort_type === 3}}" />
+                <image src="/images/jx.png" mode="aspectFit" wx:if="{{sort_type === 4}}" />
+            </view>
+        </view>
+    </view>
+    <production productions="{{productions}}" />
+</view>

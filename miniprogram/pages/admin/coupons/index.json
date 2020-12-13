@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-swipe-cell": "../../components/dist/swipe-cell/index",
+        "van-cell": "../../components/dist/cell/index",
+        "van-cell-group": "../../components/dist/cell-group/index",
+        "van-field": "../../components/dist/field/index"
+    }
+}

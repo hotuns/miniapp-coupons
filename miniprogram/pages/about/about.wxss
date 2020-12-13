@@ -1,0 +1,24 @@
+/* pages/about/about.wxss */
+.user-info {
+  background-color: #0d342f;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+.user-info-vip {
+  width: 44rpx;
+  margin-right: 20rpx;
+}
+.user-info-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-left: 80rpx;
+  margin-right: 40rpx;
+  overflow: hidden;
+}
+.user-info-name {
+  font-size: 34rpx;
+  color: white;
+}
