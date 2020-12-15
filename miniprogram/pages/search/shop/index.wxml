@@ -1,12 +1,10 @@
 <!--pages/search/search.wxml-->
 <view class="container">
   <view class="search-tool">
-    <input type="text" placeholder="请输入搜索关键字" bindinput="bindKeyInput" value="{{searchVal}}" confirm-type="search" bindconfirm="searchContent"/>
-    <view class="search-button" bindtap="searchContent">搜索</view>
+    <input type="text" placeholder="请输入要搜索的店铺名" bindinput="bindKeyInput" value="{{searchVal}}" confirm-type="search" bindconfirm="searchContent"/>
+    <view class="search-button" bindtap="searchContent">搜索商品</view>
   </view>
-  <view>
-    
-  </view>
+
   <view class="history-search-top" wx:if="{{productions.length == 0}}">
     <text>历史搜索</text>
     <image bindtap="clearSearchContent" src="/images/remove.png" mode="aspectFill"/>

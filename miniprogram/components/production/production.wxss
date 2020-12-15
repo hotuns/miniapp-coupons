@@ -1,4 +1,5 @@
 /* components/production.wxss */
+@import "../../app.wxss";
 
 .production {
   display: flex;
@@ -21,13 +22,11 @@
   flex-direction: column;
 }
 .p-name {
+  width: 100%;
   font-size: 30rpx;
-  word-break: break-all;
   line-height: 30rpx;
-  display: block;
   margin-bottom: 6rpx;
   max-height: 60rpx;
-  overflow: hidden;
   flex-shrink: 0;
   flex-grow: 0;
 }
@@ -46,7 +45,7 @@
   margin-right: 10rpx;
 }
 .p-info-coupon:not(:last-child) {
-    margin-bottom: 16rpx;
+  margin-bottom: 16rpx;
 }
 .p-info-sale {
   font-size: 22rpx;

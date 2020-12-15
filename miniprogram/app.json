@@ -10,29 +10,36 @@
         "pages/detail/detail",
         "pages/about/about",
         "pages/search/search",
-        "pages/stype/stype"
+        "pages/stype/stype",
+        "pages/search/shop/index"
     ],
     "tabBar": {
-        "selectedColor": "#0bb9b6",
+        "selectedColor": "#fdb12b",
         "color": "#c3c3c3",
         "list": [
             {
                 "pagePath": "pages/index/index",
                 "text": "领好券",
-                "iconPath": "images/tabbar/coupons.png",
-                "selectedIconPath": "images/tabbar/coupons-s.png"
+                "iconPath": "images/tabbar/优惠券-g.png",
+                "selectedIconPath": "images/tabbar/优惠券.png"
             },
             {
                 "pagePath": "pages/pddindex/index",
                 "text": "买东西",
-                "iconPath": "images/tabbar/add-cart.png",
-                "selectedIconPath": "images/tabbar/add-cart-s.png"
+                "iconPath": "images/tabbar/推荐-g.png",
+                "selectedIconPath": "images/tabbar/推荐.png"
             },
             {
                 "pagePath": "pages/parse/index",
                 "text": "解析链接",
-                "iconPath": "images/tabbar/gift.png",
-                "selectedIconPath": "images/tabbar/gift-s.png"
+                "iconPath": "images/tabbar/刷新-g.png",
+                "selectedIconPath": "images/tabbar/刷新.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "我",
+                "iconPath": "images/tabbar/个人中心-g.png",
+                "selectedIconPath": "images/tabbar/个人中心.png"
             }
         ]
     },

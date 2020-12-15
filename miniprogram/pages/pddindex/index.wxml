@@ -18,7 +18,7 @@
             <text>品牌好货</text>
         </view>
         <view class="menu-item" bindtap="gotoStype" data-type="{{8}}" data-title="特别推荐" data-banner="{{env.subTypeBannerImage.shot}}">
-            <image src="/images/pp.png" mode="aspectFit" />
+            <image src="/images/waimai.png" mode="aspectFit" />
             <text>特别推荐</text>
         </view>
     </view>

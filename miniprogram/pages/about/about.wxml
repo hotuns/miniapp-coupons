@@ -4,33 +4,22 @@
     <view class="user-info-avatar">
       <open-data type="userAvatarUrl"></open-data>
     </view>
-    <i class="iconfont icon-dollar" ></i>
     <view class="user-info-name">
       <open-data type="userNickName"></open-data>
     </view>
   </view>
 
   <view class="section">
-    <view class="section-top">
-      <text class="section-text">商品订单</text>
-    </view>
-    <view class="section-bottom">
-      <view class="section-bottom-item" bindtap="topdd">
-        <image src="/images/pdd.png"  mode="aspectFit"/>
-        <text>拼多多</text>
-      </view>
-    </view>
-  </view>
+    <van-cell title="领券提醒" icon="location-o" is-link bindtap="subscribeMessage"/>
 
-  <view class="section">
-    <view class="section-top">
-      <text class="section-text">有趣小程序</text>
-    </view>
-    <view class="section-bottom">
-      <view class="section-bottom-item" bindtap="toOtherMiniPrograms" data-index="{{index}}" wx:for="{{otherMiniPrograms}}">
-        <image src="{{item.icon}}"  mode="aspectFit"/>
-        <text>{{item.name}}</text>
+
+    <!-- <i class="iconfont icon-dollar" ></i> -->
+    <!-- <van-cell title="联系客服" icon="chat-o">
+      <view slot="right-icon">
+        <van-button class="contack-button" icon="arrow" type="default" open-type='contact' style="height: 30px"/>
       </view>
-    </view>
+    </van-cell> -->
+
+
   </view>
 </view>

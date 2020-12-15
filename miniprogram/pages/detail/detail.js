@@ -103,7 +103,7 @@ Page({
     },
     gohome() {
         wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/pddindex/index',
         });
     }
 })

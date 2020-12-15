@@ -1,6 +1,6 @@
 /* pages/about/about.wxss */
 .user-info {
-  background-color: #0d342f;
+  background-color: #fdb12b;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -21,4 +21,8 @@
 .user-info-name {
   font-size: 34rpx;
   color: white;
+}
+
+.contack-button {
+  
 }

@@ -12,6 +12,44 @@ Page({
     
   },
 
+      /**
+     * 订阅消息
+     */
+    subscribeMessage() {
+      console.log('1')
+      let tmplId = env.tmplIds
+      wx.requestSubscribeMessage({
+          tmplIds: [tmplId],
+          success(res) {
+              // 申请订阅成功
+              if (res.errMsg === 'requestSubscribeMessage:ok') {
+                  // 这里将订阅的课程信息调用云函数存入云开发数据
+                  wx.cloud
+                      .callFunction({
+                          name: 'subscribe',
+                          data: {
+                              templateId: tmplId,
+                          },
+                      })
+                      .then(() => {
+                          wx.showToast({
+                              title: '订阅成功',
+                              icon: 'success',
+                              duration: 2000,
+                          });
+                      })
+                      .catch(() => {
+                          wx.showToast({
+                              title: '订阅失败',
+                              icon: 'success',
+                              duration: 2000,
+                          });
+                      });
+              }
+          },
+      })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
