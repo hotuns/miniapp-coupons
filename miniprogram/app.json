@@ -33,12 +33,6 @@
                 "text": "解析链接",
                 "iconPath": "images/tabbar/gift.png",
                 "selectedIconPath": "images/tabbar/gift-s.png"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "我",
-                "iconPath": "images/tabbar/gift.png",
-                "selectedIconPath": "images/tabbar/gift-s.png"
             }
         ]
     },

@@ -99,7 +99,7 @@ Page({
             }
         })
             .then(res => {
-                if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_search_response && res.result.data.goods_search_response.goods_list) {
+                if (res.result && res.result.success && res.result.data && res.result.data.goods_search_response && res.result.data.goods_search_response.goods_list) {
                     wx.stopPullDownRefresh();
                     const list = res.result.data.goods_search_response.goods_list;
                     if (list.length === 0) {
@@ -146,7 +146,7 @@ Page({
             }
         }).then(res => {
             wx.hideLoading();
-            if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_search_response && res.result.data.goods_search_response.goods_list) {
+            if (res.result && res.result.success && res.result.data && res.result.data.goods_search_response && res.result.data.goods_search_response.goods_list) {
                 const list = res.result.data.goods_search_response.goods_list;
                 this.setData({
                     productions: this.data.productions.concat(list),

@@ -40,7 +40,7 @@ Page({
             }
         })
             .then(res => {
-                if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_basic_detail_response && res.result.data.goods_basic_detail_response.list) {
+                if (res.result && res.result.success && res.result.data && res.result.data.goods_basic_detail_response && res.result.data.goods_basic_detail_response.list) {
                     const list = res.result.data.goods_basic_detail_response.list;
                     this.setData({
                         productions: list,
@@ -69,7 +69,7 @@ Page({
             }
         }).then(res => {
             wx.hideLoading();
-            if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_basic_detail_response && res.result.data.goods_basic_detail_response.list) {
+            if (res.result && res.result.success && res.result.data && res.result.data.goods_basic_detail_response && res.result.data.goods_basic_detail_response.list) {
                 const list = res.result.data.goods_basic_detail_response.list;
                 this.setData({
                     productions: this.data.productions.concat(list),

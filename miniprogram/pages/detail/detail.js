@@ -44,7 +44,7 @@ Page({
             }
         })
             .then(res => {
-                if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_detail_response && res.result.data.goods_detail_response.goods_details) {
+                if (res.result && res.result.success && res.result.data && res.result.data.goods_detail_response && res.result.data.goods_detail_response.goods_details) {
                     const list = res.result.data.goods_detail_response.goods_details;
                     if (list && list.length > 0) {
                         list[0].coupon_start_time_format = this.formatDate(list[0].coupon_start_time * 1000);
@@ -85,7 +85,7 @@ Page({
             }
         }).then(res => {
             wx.hideLoading();
-            if (res.result && res.result._status === 0 && res.result.data && res.result.data.goods_promotion_url_generate_response && res.result.data.goods_promotion_url_generate_response.goods_promotion_url_list) {
+            if (res.result && res.result.success && res.result.data && res.result.data.goods_promotion_url_generate_response && res.result.data.goods_promotion_url_generate_response.goods_promotion_url_list) {
                 const list = res.result.data.goods_promotion_url_generate_response.goods_promotion_url_list;
                 if (list.length > 0) {
                     const r = list[0];

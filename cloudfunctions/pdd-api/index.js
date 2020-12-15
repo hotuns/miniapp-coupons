@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
         type: "pdd.ddk.goods.search",
         pid: utils.PDDPID,
         page: event.page ? event.page : 1,
-        block_cat_packages: `[1,2]`,
+        block_cat_packages: `[1]`,//屏蔽商品类目包：1-拼多多小程序屏蔽类目;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
     };
     // 子分类
     if (event.stype) {
@@ -88,28 +88,28 @@ exports.main = async (event, context) => {
             if (r.goods_search_response && r.goods_search_response.goods_list) {
                 let t_list = [];
                 for (let g of r.goods_search_response.goods_list) {
-                    if (
-                        g.goods_desc.indexOf("电子书") !== -1 ||
-                        g.goods_name.indexOf("电子书") !== -1
-                    ) {
-                    } else {
-                        t_list.push(g);
-                    }
+                    // if (
+                    //     g.goods_desc.indexOf("电子书") !== -1 ||
+                    //     g.goods_name.indexOf("电子书") !== -1
+                    // ) { } else {
+                    //     t_list.push(g);
+                    // }
+                    t_list.push(g);
                 }
                 r.goods_search_response.goods_list = t_list;
                 return {
-                    _status: 0,
+                    success: true,
                     data: result.data,
                 };
             }
         }
         return {
-            _status: 0,
+            success: true,
             data: result.data,
         };
     } catch (err) {
         return {
-            _status: -1,
+            success: false,
         };
     }
 };
