@@ -4,7 +4,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  padding: 20rpx;
+  padding: 40rpx 20rpx;
 }
 .user-info-vip {
   width: 44rpx;

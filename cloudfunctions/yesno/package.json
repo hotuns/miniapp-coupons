@@ -1,5 +1,5 @@
 {
-  "name": "coupons",
+  "name": "yesno",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tcb-router": "^1.1.2",
+    "axios": "^0.21.1",
     "wx-server-sdk": "~2.3.2"
   }
 }

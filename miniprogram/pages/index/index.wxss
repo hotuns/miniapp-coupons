@@ -38,6 +38,7 @@ page {
 }
 
 .container {
+width: 100vw;
   font-size: 14px;
   line-height: 24px;
   min-height: 100vh;
@@ -71,7 +72,6 @@ page {
 
 .container .coupon .item .top .left {
   height: 116rpx;
-  width: 400rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,9 +131,18 @@ page {
   width: 100%;
   /* height: auto; */
   height: 10vh;
-  border-radius: 30rpx;
+  border-radius: 20px 20px 0 0;
 }
 
+.container .coupon .item .nums{
+    border-radius: 0 0 20px 20px;
+    background-color: rgb(238, 199, 147);
+    color: rgb(68, 0, 0);
+    padding: 0 30px;
+}
+.container .coupon .item .nums text {
+    font-size: 50rpx;
+}
 
 
 .loading {

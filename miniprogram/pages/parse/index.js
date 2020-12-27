@@ -1,5 +1,7 @@
 // miniprogram/pages/parse/index.js
-import {getAppConfig} from '../../util/util'
+import { getAppConfig } from '../../util/util'
+// 在页面中定义插屏广告
+let interstitialAd = null
 
 
 Page({
@@ -7,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        audit:false,
+        audit: false,
         originUrl: "",
         parsedUrl: "",
         goodsInfo: undefined,
@@ -128,12 +130,23 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) { 
-        getAppConfig().then(config=>{
+    onLoad: function (options) {
+        getAppConfig().then(config => {
             this.setData({
                 audit: config.audit
             })
         })
+
+
+
+        if (wx.createInterstitialAd) {
+            interstitialAd = wx.createInterstitialAd({
+                adUnitId: 'adunit-4093c8ab33e81632'
+            })
+            interstitialAd.onLoad(() => { })
+            interstitialAd.onError((err) => { })
+            interstitialAd.onClose(() => { })
+        }
     },
 
     /**
@@ -180,6 +193,15 @@ Page({
                 }
             }
         })
+
+
+
+        // 在适合的场景显示插屏广告
+        if (interstitialAd) {
+            interstitialAd.show().catch((err) => {
+                console.error(err)
+            })
+        }
     },
 
     /**

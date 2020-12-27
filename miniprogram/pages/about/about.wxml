@@ -1,25 +1,23 @@
-<!--pages/about/about.wxml-->
+<!-- pages/about/about.wxml -->
 <view class="container">
-  <view class="user-info">
-    <view class="user-info-avatar">
-      <open-data type="userAvatarUrl"></open-data>
+    <view class="user-info">
+        <view class="user-info-avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="user-info-name">
+            <open-data type="userNickName"></open-data>
+        </view>
     </view>
-    <view class="user-info-name">
-      <open-data type="userNickName"></open-data>
-    </view>
-  </view>
-
-  <view class="section">
-    <van-cell title="领券提醒" icon="location-o" is-link bindtap="subscribeMessage"/>
-
-
-    <!-- <i class="iconfont icon-dollar" ></i> -->
-    <!-- <van-cell title="联系客服" icon="chat-o">
+    <view class="section">
+        <van-cell title="领券提醒" icon="location-o" is-link bindtap="subscribeMessage" />
+        <van-cell-group title="后台管理" wx:if="{{userInfo.isDistribution}}">
+            <van-cell title="订单列表" icon="location-o" is-link link-type="navigateTo" url="/pages/orders/index?platform=meituan" />
+        </van-cell-group>
+        <!-- <i class="iconfont icon-dollar" ></i> -->
+        <!-- <van-cell title="联系客服" icon="chat-o">
       <view slot="right-icon">
         <van-button class="contack-button" icon="arrow" type="default" open-type='contact' style="height: 30px"/>
       </view>
     </van-cell> -->
-
-
-  </view>
+    </view>
 </view>

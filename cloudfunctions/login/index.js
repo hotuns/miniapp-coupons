@@ -15,13 +15,12 @@ exports.main = async (event, context) => {
 
     console.log(distribution.data)
     if (distribution.data.length != 0) {
-
-    }
-
-    return {
-        event,
-        openid: wxContext.OPENID,
-        appid: wxContext.APPID,
-        unionid: wxContext.UNIONID,
+        return {
+            isDistribution: true,
+            distributionInfo: distribution.data[0],
+            openid: wxContext.OPENID,
+            appid: wxContext.APPID,
+            unionid: wxContext.UNIONID,
+        }
     }
 }

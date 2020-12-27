@@ -1,0 +1,134 @@
+{
+    "_id": "fc5ac5c95fbd0bf9003d301f646b7191",
+    "title": "饿了么",
+    "coupon": [
+        {
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/elmdacan.png",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "taoke/pages/shopping-guide/index?scene=6zkYItu"
+            },
+            "name": "最高20无门槛",
+            "type": 1.0
+        },
+        {
+            "name": "红包每天领",
+            "type": 1.0,
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/20201124215133.jpg",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "ele-recommend-price/pages/index/index.html?isGuest=true&spm=a2ogi.19758203.0.0"
+            }
+        },
+        {
+            "name": "大额满减券",
+            "type": 1.0,
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/20201124215133.jpg",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/1xFYItu"
+            }
+        },
+        {
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/elmshangchao.png",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/OMBYEtu"
+            },
+            "name": "商超天天领",
+            "type": 1.0
+        }
+    ]
+}
+{
+    "_id": "915cc8ab5fbbb6f50034354a4d9a4a77",
+    "title": "美团",
+    "coupon": [
+        {
+            "name": "外卖重磅红包",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/a89637f2c503ea874117429dc6768e4c.jpg",
+            "type": 1,
+            "minapp": {
+                "appid": "wxde8ac0a21135c07d",
+                "path": "/index/pages/h5/h5?weburl=https%3A%2F%2Frunion.meituan.com%2Furl%3Fkey%3D6ece6430223030a7bfba6d588ce808d2%26url%3Dhttps%253A%252F%252Fi.meituan.com%252Fawp%252Fhfe%252Fblock%252Fa13b87919a9ace9cfab4%252F89400%252Findex.html%253Fappkey%253D6ece6430223030a7bfba6d588ce808d2%253A1179601966%26sid%3D1179601966&lch=cps:waimai:5:6ece6430223030a7bfba6d588ce808d2:1179601966&f_token=1&f_userId=1"
+            }
+        },
+        {
+            "name": "商超生鲜红包",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/meituanshagnchao.png",
+            "type": 1,
+            "minapp": {
+                "appid": "wxde8ac0a21135c07d",
+                "path": "/index/pages/h5/h5?weburl=https%3A%2F%2Frunion.meituan.com%2Furl%3Fkey%3D6ece6430223030a7bfba6d588ce808d2%26url%3Dhttps%253A%252F%252Fi.meituan.com%252Fawp%252Fhfe%252Fblock%252Fc9ff59b58f6f5bf385b6%252F94455%252Findex.html%253Fappkey%253D6ece6430223030a7bfba6d588ce808d2%253A1179601966%26sid%3D1179601966&lch=cps:waimai:5:6ece6430223030a7bfba6d588ce808d2:1179601966&f_token=1&f_userId=1"
+            }
+        },
+        {
+            "name": "美团红包津贴",
+            "type": 1.0,
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele_guosu.png",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "minapp": {
+                "appid": "wx2c348cf579062e56",
+                "path": "outer_packages/r2xinvite/coupon/coupon?inviteCode=NnOIp-QOs8SiYF1dcSlL5r8phPrCf6qkH7evMyjIoup2NXxNCLYcBbd3bqpv2X2IvJZJ9Is0gRv7Ay3EEdpVI8g9gparlaIvMjiOVlnv0mdl_lgh1PhLOiPNCDJvLjCS2iaknCdyAEbyQrUBxkuPKFTmT8t4J21GLY7CvTCtK0A"
+            }
+        },
+        {
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/IMG_7280.JPG",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "minapp": {
+                "appid": "wxde8ac0a21135c07d",
+                "path": "dynamic-page/index?scene=fenxiao-third-assist&yaoxin=1&activityId=7&uid=231124425"
+            },
+            "name": "无门槛9元话费券",
+            "type": 1.0
+        }
+    ]
+}
+{
+    "_id": "4fb129165fc1ba0b007aa0ac6401caf0",
+    "title": "打车",
+    "coupon": [
+        {
+            "name": "花小猪大额红包",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/huaxiaozhu.jpg",
+            "type": 1,
+            "minapp": {
+                "appid": "wxd98a20e429ce834b",
+                "path": "pages/index/index?scene=zxOgqk&f_dpsid=b8984b687b7e44549cb1bcb02049ae8d&entrance_channel=&g_channel=8b658d6ecaa5b8285c9b36f27dc81af1&channel_id=2001001001&share_code=bv0pki3no25cksn458l0&longitude=117.69752502441406&latitude=38.921287536621094&city_id=7"
+            }
+        },
+        {
+            "name": "滴滴打车出行券",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/didibanner.jpg",
+            "type": 1,
+            "minapp": {
+                "appid": "wxaf35009675aa0b2a",
+                "path": "passenger-recommend/views/coupon/index?sharecode=bv0pktcl5g1r04efs3gg&template=1&channel_id=1100000090&scene=14&root_dchn=gq2mZb"
+            }
+        }
+    ]
+}
+{
+    "_id": "73f70d5c5fdb3fc8000c2312795782b2",
+    "title": "橙心优选",
+    "coupon": [
+        {
+            "name": "新人免费领",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/IMG_7719.jpg",
+            "type": 1,
+            "minapp": {
+                "appid": "wxd7fa7df243b05aed",
+                "path": "pages/webx/index?page=invitee&scene=nLAEd3&biz_channel_id=666005&share_source_id=60052&origin=&share_code=bvdjnofom0ugfdescmsg00"
+            }
+        }
+    ]
+}

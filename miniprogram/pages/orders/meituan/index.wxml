@@ -1,0 +1,27 @@
+<!-- pages/orders/meituan/meituan.wxml -->
+<van-dropdown-menu>
+    <van-dropdown-item value="{{ orderType }}" options="{{  orderTypeOpt }}" />
+    <!-- <van-dropdown-item value="{{ sort }}" options="{{ sortOpt }}" /> -->
+</van-dropdown-menu>
+<van-cell title="选择日期区间" value="{{ dateString }}" bind:click="onDisplay" />
+<van-calendar show="{{ datePickerShow }}" min-date="{{minDate}}" max='{{maxDate}}' type="range" bind:close="onClose" bind:confirm="onConfirm" />
+<view class="order-container">
+    <view class="total">订单总数: {{orderData.total}}</view>
+    <view class="total">佣金总数: {{orderData.totalProfit}}</view>
+    <view wx:for="{{orderData.orderList}}" class="order-item">
+        <view class="smstitle  light">{{item.smstitle}}</view>
+        <view class="status">{{item.statusStr}}</view>
+        <view class="price">
+            用户支付总金额:
+            <text class="light">{{item.payprice}}</text>
+        </view>
+        <view class="price">
+            订单预估返佣:
+            <text class="light">{{item.profit}}</text>
+        </view>
+        <view class="paytime">
+            支付时间:
+            <text class="light">{{item.paytime}}</text>
+        </view>
+    </view>
+</view>

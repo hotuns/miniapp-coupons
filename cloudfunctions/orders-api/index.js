@@ -53,8 +53,8 @@ exports.main = async (event, context) => {
                     key: utils.appkey,
                     ts: new Date().getTime().toString().slice(0, 10),
                     type: type, // 查询订单类型  0 团购订单;2 酒店订单;4 外卖订单;5 话费订单;6 闪购订单
-                    startTime: startTime.getTime().toString().slice(0, 10),
-                    endTime: endTime.getTime().toString().slice(0, 10),
+                    startTime: new Date(startTime).getTime().toString().slice(0, 10),
+                    endTime: new Date(endTime).getTime().toString().slice(0, 10),
                     page: page,
                     limit: pageSize,
                 }
@@ -79,6 +79,8 @@ exports.main = async (event, context) => {
                         console.log(item.sid)
                         return item.sid === sid
                     })
+                } else {
+                    orderList = res.data.dataList
                 }
 
                 return {

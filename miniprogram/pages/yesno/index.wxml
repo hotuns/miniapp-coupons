@@ -1,0 +1,31 @@
+<wxs src="../../filters/numFormat.wxs" module="filters"></wxs>
+<view class='parse'>
+    <!-- <view style="margin: 20px">
+     <ad unit-id="adunit-842150a511cffd15"></ad>
+    </view> -->
+    <van-transition show="{{ show }}" custom-class="block" name="slide-down">
+        <form bindsubmit="bindFormSubmit" bindreset='bindFormReset' hidden="{{showAnswer}}">
+            <view class="section">
+                <view>
+                    <text class="title">在纠结什么?</text>
+                    <button wx:if="{{showClear}}" class='clear' form-type="reset">清空内容</button>
+                </view>
+                <textarea class='url-textarea' placeholder="在这里输入你的问题, 我来告诉你 Yes or No" name="textarea" auto-focus="{{true}}" maxlength="{{-1}}" auto-height="{{true}}" bindinput='onTextareaInput' />
+            </view>
+            <button class="subBut" disabled="{{!showClear}}" form-type="submit" type='primary'>
+                给我答案
+            </button>
+        </form>
+    </van-transition>
+    <van-overlay show="{{  showAnswer }}" bind:click="onClickHideAnswer">
+        <view class="wrapper">
+            <image src="{{answer.image}}" mode="center" bindload='answerLoad' />
+            <van-transition show="{{  answerLoaded }}" custom-class="answer" name="fade">
+                <text>{{answer.answer}}</text>
+            </van-transition>
+        </view>
+    </van-overlay>
+    <!-- <view style="margin: 20px" wx:if="{{!audit}}">
+        <ad unit-id="adunit-abbef0f8558e28b2" ad-type="video" ad-theme="white"></ad>
+    </view> -->
+</view>

@@ -3,33 +3,43 @@
     "title": "饿了么",
     "coupon": [
         {
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/elemeitianling.jpg",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/elmdacan.png",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "taoke/pages/shopping-guide/index?scene=QtK3Jtu"
+                "path": "taoke/pages/shopping-guide/index?scene=6zkYItu"
             },
             "name": "最高20无门槛",
             "type": 1.0
         },
         {
-            "name": "饿了么天天领",
+            "name": "红包每天领",
+            "type": 1.0,
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/elemeitianling.jpg",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "ele-recommend-price/pages/index/index?isGuest=true&spm=a2ogi.19758203.0.0"
+            }
+        },
+        {
+            "name": "大额满减券",
             "type": 1.0,
             "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/20201124215133.jpg",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/LImiwtu"
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/1xFYItu"
             }
         },
         {
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele_banner.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/elmshangchao.png",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/atlUttu"
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/OMBYEtu"
             },
-            "name": "饿了么霸王餐",
+            "name": "商超天天领",
             "type": 1.0
         }
     ]
@@ -49,9 +59,19 @@
             }
         },
         {
+            "name": "美团优选满减",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/meituanshagnchao.png",
+            "type": 1,
+            "minapp": {
+                "appid": "wx77af438b3505c00e",
+                "path": "pages/index/index?protocol=igrocery://www.grocery.com/invite/receive?need_login=1&need_type=redirectTo&inviteCode=TMNERU5U76&action=invited&from=xxxx&channeltype=wx&sharesource=wx&invitePoi=11270498&reqid=1608700501109-368&sappnm=meituanyouxuan_wxapp&spoi=11270498&suid=231124425"
+            }
+        },
+        {
             "name": "商超生鲜红包",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/2cc7fb2c51daa72501044f9da4170115.jpg",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/meituanshagnchao.png",
             "type": 1,
             "minapp": {
                 "appid": "wxde8ac0a21135c07d",
@@ -80,7 +100,6 @@
         }
     ]
 }
-
 {
     "_id": "4fb129165fc1ba0b007aa0ac6401caf0",
     "title": "打车",
@@ -89,7 +108,6 @@
             "name": "花小猪大额红包",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
             "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/huaxiaozhu.jpg",
-            "url": "",
             "type": 1,
             "minapp": {
                 "appid": "wxd98a20e429ce834b",
@@ -100,11 +118,26 @@
             "name": "滴滴打车出行券",
             "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
             "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/didibanner.jpg",
-            "url": "",
             "type": 1,
             "minapp": {
                 "appid": "wxaf35009675aa0b2a",
                 "path": "passenger-recommend/views/coupon/index?sharecode=bv0pktcl5g1r04efs3gg&template=1&channel_id=1100000090&scene=14&root_dchn=gq2mZb"
+            }
+        }
+    ]
+}
+{
+    "_id": "73f70d5c5fdb3fc8000c2312795782b2",
+    "title": "橙心优选",
+    "coupon": [
+        {
+            "name": "新人免费领",
+            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon/IMG_7719.jpg",
+            "type": 1,
+            "minapp": {
+                "appid": "wxd7fa7df243b05aed",
+                "path": "pages/webx/index?page=invitee&scene=nLAEd3&biz_channel_id=666005&share_source_id=60052&origin=&share_code=bvdjnofom0ugfdescmsg00"
             }
         }
     ]

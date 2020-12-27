@@ -1,6 +1,7 @@
 // miniprogram/pages/index/index.js
-import { getCopons, getShareMessage, getNotice } from '../../api/coupons'
-import {getAppConfig} from '../../util/util'
+import { getCoupons, getShareMessage, getNotice } from '../../api/coupons'
+import { getAppConfig } from '../../util/util'
+
 
 Page({
 
@@ -30,22 +31,28 @@ Page({
      */
     loadData() {
 
-        getCopons().then(res => {
-            console.log(res)
-            let tabs = res
-
+        getCoupons().then(res => {
+            if (!res.success) {
+                return
+            }
+            let tabs = res.data
 
             let all = {
                 title: '全部',
                 icon: '../../images/all.png',
-                coupon: []
+                coupons: []
             }
 
-            res.forEach(item => {
-                let c = item.coupon
-                c.forEach(citem => {
-                    all.coupon.push(citem)
+            res.data.forEach(item => {
+                item.coupons.sort((a, b) => {
+                    return a.index - b.index
                 })
+
+                item.coupons.forEach(cc => {
+                    cc.nums = (Math.floor(Math.random() * 10) + 1) * 77
+                    all.coupons.push(cc)
+                })
+
             })
 
 
@@ -54,17 +61,17 @@ Page({
 
             this.setData({ tabs: tabs })
 
-            getAppConfig().then(confit=>{
-                console.log(confit)
-                this.setData({
-                    audit: confit.audit
-                })
-                if(!confit.audit) {
-                    this.setData({
-                        subscribeShow: true,
-                    })
-                }
-            })
+            // getAppConfig().then(confit=>{
+            //     console.log(confit)
+            //     this.setData({
+            //         audit: confit.audit
+            //     })
+            //     if(!confit.audit) {
+            //         this.setData({
+            //             subscribeShow: true,
+            //         })
+            //     }
+            // })
 
         })
 
@@ -135,15 +142,12 @@ Page({
      */
     toCoupon(e) {
         const couponIdx = e.currentTarget.dataset.index
-        const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
-
-
-        console.log('miniinfo', wxappinfo)
-
+        const wxpath = this.data.tabs[this.data.activeTab].coupons[couponIdx].wxpath
+        const wxappid = this.data.tabs[this.data.activeTab].coupons[couponIdx].wxappid
 
         wx.navigateToMiniProgram({
-            appId: wxappinfo.appid,
-            path: wxappinfo.path,
+            appId: wxappid,
+            path: wxpath,
             success(res) {
                 // 打开成功
                 console.log('打开成功', res)
@@ -163,16 +167,16 @@ Page({
      */
     onShow: function () {
         const options = wx.getLaunchOptionsSync()
-        console.log('show',options)
-        if(options.scene == 1038 || options.scene == 1001) {
+        console.log('show', options)
+        if (options.scene == 1038 || options.scene == 1001) {
 
-            
 
-            if(options.referrerInfo && options.referrerInfo.appId) {
+
+            if (options.referrerInfo && options.referrerInfo.appId) {
 
             }
         }
-        
+
     },
 
     /**

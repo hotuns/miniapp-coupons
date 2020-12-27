@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-cell": "../../../components/dist/cell/index",
+        "van-cell-group": "../../../components/dist/cell-group/index",
+        "van-calendar": "../../../components/dist/calendar/index",
+        "van-dropdown-menu": "../../../components/dist/dropdown-menu/index",
+        "van-dropdown-item": "../../../components/dist/dropdown-item/index"
+    }
+}

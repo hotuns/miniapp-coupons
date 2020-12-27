@@ -2,11 +2,11 @@ const db = wx.cloud.database(
     { env: 'test-b602t' }
 )
 
-export function getCopons() {
+export function getCoupons() {
     return wx.cloud.callFunction({
         name: 'coupons',
         data: {
-            apitype: 'getCoupons'
+            $url: 'getCoupons',
         }
     }).then(res => {
         return res.result

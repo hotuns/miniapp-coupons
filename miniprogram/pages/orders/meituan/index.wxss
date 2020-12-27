@@ -1,0 +1,25 @@
+/* pages/orders/meituan/meituan.wxss */
+.order-container {
+    background-color: rgb(243, 243, 243);
+    width: 100vw;
+}
+.total {
+    width: 95vw;
+    margin: 0 auto 20rpx;
+}
+.order-item {
+    background-color: #fff;
+    width: 95vw;
+    margin: 0 auto 20rpx;
+    padding: 20rpx;
+    color: rgb(109, 109, 109);
+}
+.smstitle {
+    font-size: 40rpx;
+}
+.price {
+
+}
+.light {
+    color: black;
+}

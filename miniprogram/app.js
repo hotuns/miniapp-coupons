@@ -3,6 +3,8 @@ import env from './env'
 App({
     onLaunch: function () {
 
+        this.globalData = {}
+
         if (!wx.cloud) {
             console.error('请使用 2.2.3 或以上的基础库以使用云能力')
         } else {
@@ -42,7 +44,6 @@ App({
             // 新版本下载失败
         })
 
-        this.globalData = {}
     },
     onShow: function(opts) {
         console.log('启动参数', opts)

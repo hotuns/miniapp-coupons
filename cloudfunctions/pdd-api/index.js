@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
         type: "pdd.ddk.goods.search",
         pid: utils.PDDPID,
         page: event.page ? event.page : 1,
-        block_cat_packages: `[1]`,//屏蔽商品类目包：1-拼多多小程序屏蔽类目;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
+        block_cat_packages: `[1,2]`,//屏蔽商品类目包：1-拼多多小程序屏蔽类目;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
     };
     // 子分类
     if (event.stype) {
@@ -98,6 +98,7 @@ exports.main = async (event, context) => {
                 }
                 r.goods_search_response.goods_list = t_list;
                 return {
+                    _status: 0,
                     success: true,
                     data: result.data,
                 };
@@ -105,10 +106,12 @@ exports.main = async (event, context) => {
         }
         return {
             success: true,
+            _status: 0,
             data: result.data,
         };
     } catch (err) {
         return {
+            _status: -1,
             success: false,
         };
     }
