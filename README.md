@@ -92,7 +92,7 @@
 
 既然文章是为了分享，我直接开源放出全部代码
 
-https://github.com/hedongshu/miniapp-coupons​github.com
+https://github.com/hedongshu/miniapp-coupons.github.com
 
 ## 最后
 上传审核完之后，就是推广你的小程序，我是加了好几个外卖红包的微信群，然后每天发一发，也没有非常上心
