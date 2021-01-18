@@ -1,13 +1,12 @@
 {
     "_id": "915cc8ab5fbbb6f50034354a4d9a4a77",
     "title": "美团",
-    "icon": "cloud://test-b602t.7465-test-b602t-1253275554/icon/meituan.png",
+    "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/icon/meituan.png",
     "coupon": [
         {
             "name": "外卖重磅红包",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/a89637f2c503ea874117429dc6768e4c.jpg",
-            "url": "https://runion.meituan.com/url?key=6ece6430223030a7bfba6d588ce808d2&url=https%3A%2F%2Fi.meituan.com%2Fawp%2Fhfe%2Fblock%2Fa945391288b790d558b7%2F78716%2Findex.html%3Fappkey%3D6ece6430223030a7bfba6d588ce808d2%3A1179601966&sid=1179601966",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/a89637f2c503ea874117429dc6768e4c.jpg",
             "type": 1,
             "minapp": {
                 "appid": "wxde8ac0a21135c07d",
@@ -16,9 +15,8 @@
         },
         {
             "name": "商超生鲜红包",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/2cc7fb2c51daa72501044f9da4170115.jpg",
-            "url": "https://runion.meituan.com/url?key=6ece6430223030a7bfba6d588ce808d2&url=https%3A%2F%2Fi.meituan.com%2Fawp%2Fhfe%2Fblock%2F652c4b9d8a2425a98ca5%2F92207%2Findex.html%3Fappkey%3D6ece6430223030a7bfba6d588ce808d2%3A1179601966&sid=1179601966",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/2cc7fb2c51daa72501044f9da4170115.jpg",
             "type": 1,
             "minapp": {
                 "appid": "wxde8ac0a21135c07d",
@@ -28,16 +26,16 @@
         {
             "name": "美团红包津贴",
             "type": 1.0,
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele_guosu.png",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/ele_guosu.png",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/meituan.png",
             "minapp": {
                 "appid": "wx2c348cf579062e56",
                 "path": "outer_packages/r2xinvite/coupon/coupon?inviteCode=NnOIp-QOs8SiYF1dcSlL5r8phPrCf6qkH7evMyjIoup2NXxNCLYcBbd3bqpv2X2IvJZJ9Is0gRv7Ay3EEdpVI8g9gparlaIvMjiOVlnv0mdl_lgh1PhLOiPNCDJvLjCS2iaknCdyAEbyQrUBxkuPKFTmT8t4J21GLY7CvTCtK0A"
             }
         },
         {
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/IMG_7280.JPG",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/meituan.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/IMG_7280.JPG",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/meituan.png",
             "minapp": {
                 "appid": "wxde8ac0a21135c07d",
                 "path": "dynamic-page/index?scene=fenxiao-third-assist&yaoxin=1&activityId=7&uid=231124425"
@@ -50,53 +48,49 @@
 {
     "_id": "fc5ac5c95fbd0bf9003d301f646b7191",
     "title": "饿了么",
-    "icon": "cloud://test-b602t.7465-test-b602t-1253275554/icon/ele.png",
+    "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/icon/ele.png",
     "coupon": [
         {
             "name": "饿了么天天领",
             "type": 1.0,
-            "url": "https://s.click.ele.me/t?&e=-s02KeFJrpfv0tckLdDbwC0G7FQGrVLXrtBDKIcWvIXhOebXOLKrORaWYRM2Xo6N44KW45JClFy3XiI5kF81XcAlaaNd5cGqEbYDdqc4KHc2dtALf6JO1yyaiVOAqkWfVkLgQIC3PzEQNgO3yFy3uTY9dphdZuqhQPAJ1ekWERInSpNvOYUwEhvcUHq1gx9RISkPtLm45U6euuuEAp3chvCN2nbfO3rHDzfYN8GfMyTsEK6IyURTk9TT8TkqmcePmQJiS0nhjnfsbk00Bqt9xY8X3mXoVUZ7JapE7Wz5b3pDB70KiyrQaBGDX34UpzGwYHbHtpDeAkoeY7ExphygbjCNoIsrad5fcEvQUziBqwIAcPkGCmshaCylwxVyG6A821nL8gbUEqGDDAdmQxQoT0gPRBMi9z0FCCPBKoZ2USlBFwEA7FgV7W7QlJBIIELMqJemyGdZFmxXBxgIMuM05VoYlfSWU82pLfkgpCsq11VXXLgw1Ap4lkjwXBHwrcJU2pxYqyH7&&union_lens=lensId%3AMAPI%401606224009%400b84769a_cc26_175fa6959fc_c57a%4001",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/20201124215133.jpg",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/20201124215133.jpg",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
                 "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/LImiwtu"
             }
         },
         {
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele_banner.png",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/ele_banner.png",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
                 "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/atlUttu"
             },
             "name": "饿了么霸王餐",
-            "type": 1.0,
-            "url": "https://s.click.ele.me/t?&e=-s02csdENwOeqAUB8lUoK2khrQYCmuwY9gJEgKWF7IzNdyGi4SHFQeeATX3SxivWaLziN5qByt3Qkg5wqMXLAp7Z8it789oT7t22DOZbzxJ1zK5iwAIsHOJZj6IVJ4YpDsfVnlBurhyLBkAZVPSGlEyAi05RTdXmL85l9qqd5t9XXjNNTu26SY1Burw4gEvgOj5F5mOsTAN1gMDirtMDZmgrONAzgsS5XZygHuYhQfymtjylGEbyvdg83zS8r7qJjZVDWtdHxxlFR7RPWudxB2elALqNBGjcvTG8njMHb5TD5KsDvJIBeUbg3i50vIt8xO2RdYIJO0L4UTbmCdOQTrP7wuy6GuqWdZeJ6STa7EulbAmmCK3CQhK6SgKzDgaVY13koNMMWfKWwfGheLkQfCGXRxyCzh8NmqohX19OrYdfHPxWrJkFm1o5LUEvokloVoefUCK57iynlBYIV6J4hcDG3xMQuqQHjxGrX3Ll&&union_lens=lensId%3AMAPI%401606225080%4021088f26_0763_175fa79b268_c4b3%4001"
+            "type": 1.0
         },
         {
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/elemeitianling.jpg",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/ele.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/elemeitianling.jpg",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
                 "path": "ele-recommend-price/pages/guest/index?inviterId=9263ead"
             },
             "name": "饿了么超大红包",
-            "type": 1.0,
-            "url": ""
+            "type": 1.0
         }
     ]
 }
 {
     "_id": "4fb129165fc1ba0b007aa0ac6401caf0",
     "title": "打车",
-    "icon": "cloud://test-b602t.7465-test-b602t-1253275554/icon/ele.png",
+    "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/icon/ele.png",
     "coupon": [
         {
             "name": "花小猪大额红包",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/huaxiaozhu.jpg",
-            "url": "",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/huaxiaozhu.jpg",
             "type": 1,
             "minapp": {
                 "appid": "wxd98a20e429ce834b",
@@ -105,9 +99,8 @@
         },
         {
             "name": "滴滴打车出行券",
-            "icon": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/vip.png",
-            "bannerPic": "cloud://test-b602t.7465-test-b602t-1253275554/coupon-banenr/didibanner.jpg",
-            "url": "",
+            "icon": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/vip.png",
+            "bannerPic": "cloud://test-9gfm8pvcba5c8c79.7465-test-9gfm8pvcba5c8c79-1304802965/coupon-banenr/didibanner.jpg",
             "type": 1,
             "minapp": {
                 "appid": "wxaf35009675aa0b2a",

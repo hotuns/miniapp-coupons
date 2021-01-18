@@ -4,11 +4,10 @@
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "先领个券",
+    "navigationBarTitleText": "小程序名",
     "navigationBarBackgroundColor": "#0bb9b6",
     "backgroundColor": "#FFFFFF",
     "titleView": false
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
